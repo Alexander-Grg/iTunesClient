@@ -20,7 +20,7 @@ final class ImageDownloader {
         }
 
             guard let imageData = dataResponse.data else {
-                let errorUserInfo = [NSLocalizedDescriptionKey: "Ошибка: нет данных"]
+                let errorUserInfo = [NSLocalizedDescriptionKey: "Error: There is no data"]
                 let error = NSError(domain:"Image", code:401, userInfo:errorUserInfo)
                 completion(nil, error)
                 
@@ -28,7 +28,7 @@ final class ImageDownloader {
             }
             
             guard let image = UIImage(data: imageData, scale: 1.0) else {
-                let errorUserInfo = [NSLocalizedDescriptionKey: "Ошибка конвертирования данных в изображение"]
+                let errorUserInfo = [NSLocalizedDescriptionKey: "Error of convertible from data to picture"]
                 let error = NSError(domain:"Image", code:401, userInfo:errorUserInfo)
                 completion(nil, error)
                 
