@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-//final class SearchSongsModuleBuilder {
-//
-//    static func build() -> (UIViewController & SearchSongsViewInput) {
-//        let presenter = SearchSongsPresenter()
-//        let viewController = SongsSearchViewController(presenter: presenter)
-//        presenter.viewInput = viewController
-//        return viewController
-//    }
-//}
+final class SearchSongsModuleBuilder {
+
+    static func build() -> (UIViewController & SearchSongsViewInput) {
+        let presenter = SearchSongsPresenter()
+        let viewController = SongsSearchViewController(presenter: presenter)
+        presenter.viewInput = viewController
+        return viewController
+    }
+}

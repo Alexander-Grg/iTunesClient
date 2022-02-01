@@ -49,10 +49,10 @@ final class SongsCell: UITableViewCell {
     
     // MARK: - Methods
     
-    func configure(with cellModel: AppCellModel) {
-        self.titleLabel.text = cellModel.title
-        self.subtitleLabel.text = cellModel.subtitle
-        self.ratingLabel.text = cellModel.rating
+    func configure(with cellModel: SongsCellModel) {
+        self.titleLabel.text = cellModel.trackName
+        self.subtitleLabel.text = cellModel.collectionName
+        self.ratingLabel.text = cellModel.collectionName
     }
     
     // MARK: - UI
