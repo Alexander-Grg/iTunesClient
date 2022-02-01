@@ -1,13 +1,13 @@
 //
-//  SearchViewController.swift
+//  SongsSearchViewController.swift
 //  iTunesClient
 //
-//  Created by Alexander Grigoryev on 30.01.2022.
+//  Created by Alexander Grigoryev on 01.02.2022.
 //
 
 import UIKit
 
-final class SearchViewController: UIViewController {
+final class SongsSearchViewController: UIViewController {
     
     // MARK: - Private Properties
     
@@ -84,7 +84,7 @@ final class SearchViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension SearchViewController: UITableViewDataSource {
+extension SongsSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.count
@@ -103,7 +103,7 @@ extension SearchViewController: UITableViewDataSource {
 }
 
 //MARK: - UITableViewDelegate
-extension SearchViewController: UITableViewDelegate {
+extension SongsSearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -116,7 +116,7 @@ extension SearchViewController: UITableViewDelegate {
 }
 
 //MARK: - UISearchBarDelegate
-extension SearchViewController: UISearchBarDelegate {
+extension SongsSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else {
@@ -132,7 +132,7 @@ extension SearchViewController: UISearchBarDelegate {
 }
 
 //MARK: - Input
-extension SearchViewController: SearchViewInput {
+extension SongsSearchViewController: SearchViewInput {
     
     func showError(error: Error) {
     let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
