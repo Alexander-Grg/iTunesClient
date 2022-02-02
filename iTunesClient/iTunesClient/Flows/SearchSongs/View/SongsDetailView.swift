@@ -1,13 +1,13 @@
 //
-//  AppDetailView.swift
+//  SongsDetailView.swift
 //  iTunesClient
 //
-//  Created by Alexander Grigoryev on 30.01.2022.
+//  Created by Alexander Grigoryev on 01.02.2022.
 //
 
 import UIKit
 
-final class AppDetailView: UIView {
+final class SongsDetailView: UIView {
     
     // MARK: - Subviews
     

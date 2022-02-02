@@ -1,21 +1,21 @@
 //
-//  AppDetailViewController.swift
+//  SongsDetailViewController.swift
 //  iTunesClient
 //
-//  Created by Alexander Grigoryev on 30.01.2022.
+//  Created by Alexander Grigoryev on 01.02.2022.
 //
 
 import UIKit
 
-final class AppDetailViewController: UIViewController {
+final class SongsDetailViewController: UIViewController {
     
-    let app: ITunesApp
+    let songs: ITunesSong
     
-    lazy var headerViewController = AppDetailHeaderViewController(app: self.app)
-    lazy var descriptionViewController = DescriptionViewController(app: self.app)
+    lazy var headerViewController = SongsDetailHeaderViewController(songs: self.songs)
+    lazy var descriptionViewController = SongsDescriptionViewController(songs: self.songs)
     
-    init(app: ITunesApp) {
-        self.app = app
+    init(songs: ITunesSong) {
+        self.songs = songs
         super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
