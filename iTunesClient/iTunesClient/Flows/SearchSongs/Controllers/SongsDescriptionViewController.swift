@@ -39,7 +39,7 @@ final class SongsDescriptionViewController: UIViewController {
 
     private func fillData() {
         self.songsDetailDescriptionView.versionLabel.text = songs.collectionName
-        self.songsDetailDescriptionView.descriptionLabel.text = "app.releaseNotes"
-        self.songsDetailDescriptionView.lastUpdateLabel.text = "NIL"
+        self.songsDetailDescriptionView.titleLabel.text = songs.genre
+        
     }
 }

@@ -39,7 +39,7 @@ final class SongsDetailHeaderViewController: UIViewController {
         self.downloadImage()
         self.songsDetailHeaderView.titleLabel.text = songs.trackName
         self.songsDetailHeaderView.subtitleLabel.text = songs.artistName
-        self.songsDetailHeaderView.ratingLabel.text = songs.collectionName
+        self.songsDetailHeaderView.ratingLabel.text = "\(songs.trackPrice) \(songs.currency)"
     }
     private func downloadImage() {
         guard let url = self.songs.artwork else { return }

@@ -15,7 +15,6 @@ final class SongsDetailDescriptionView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         label.textColor = .black
-        label.text = "What's new"
         return label }()
     
     private (set) lazy var versionLabel: UILabel = {
@@ -35,20 +34,14 @@ final class SongsDetailDescriptionView: UIView {
         label.textAlignment = .left
         return label }()
     
-    private (set) lazy var versionHistoryButton: UIButton = {
+    private (set) lazy var playlistInfoButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Version history", for: .normal)
+        button.setTitle("Buy song", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
         button.layer.cornerRadius = 16.0
         return button }()
     
-    private (set) lazy var lastUpdateLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14.0)
-        label.textColor = .systemGray
-        return label }()
     
 //    MARK: - Init
     override init(frame: CGRect) {
@@ -66,8 +59,7 @@ final class SongsDetailDescriptionView: UIView {
         self.addSubview(self.titleLabel)
         self.addSubview(self.versionLabel)
         self.addSubview(self.descriptionLabel)
-        self.addSubview(self.versionHistoryButton)
-        self.addSubview(self.lastUpdateLabel)
+        self.addSubview(self.playlistInfoButton)
         
         NSLayoutConstraint.activate([
             
@@ -80,12 +72,10 @@ final class SongsDetailDescriptionView: UIView {
             self.descriptionLabel.topAnchor.constraint(equalTo: self.versionLabel.bottomAnchor, constant: 10.0),
             self.descriptionLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
             self.descriptionLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 25.0),
-            self.versionHistoryButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.0),
-            self.versionHistoryButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 25.0),
-            self.versionHistoryButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 270.0),
-            self.lastUpdateLabel.topAnchor.constraint(equalTo: self.versionHistoryButton.bottomAnchor, constant: 10.0),
-            self.lastUpdateLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 25.0),
-            self.lastUpdateLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 270.0)
+            self.playlistInfoButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 20.0),
+            self.playlistInfoButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: 25.0),
+            self.playlistInfoButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 270.0),
+           
         ])
     }
     
