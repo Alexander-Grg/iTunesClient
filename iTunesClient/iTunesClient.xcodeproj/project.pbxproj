@@ -19,17 +19,13 @@
 		620A240827A9528E009FD43F /* SearchSongsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240727A9528E009FD43F /* SearchSongsViewInput.swift */; };
 		620A240A27A952AC009FD43F /* SearchSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240927A952AC009FD43F /* SearchSongsView.swift */; };
 		620A240C27A952C1009FD43F /* SongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240B27A952C1009FD43F /* SongsCell.swift */; };
-		625945082841323D008ED047 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 625945072841323D008ED047 /* Alamofire */; };
+		621B7CAF2844BDD100C114A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 621B7CAE2844BDD100C114A1 /* Alamofire */; };
 		62609EB927A99F360048DA52 /* SongsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EB827A99F360048DA52 /* SongsDetailViewController.swift */; };
 		62609EBB27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBA27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift */; };
 		62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBC27A99FB30048DA52 /* SongsDescriptionViewController.swift */; };
 		62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBE27A99FED0048DA52 /* SongsDetailView.swift */; };
 		62609EC127A9A0030048DA52 /* SongsDetailDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EC027A9A0030048DA52 /* SongsDetailDescriptionView.swift */; };
 		62609EC327A9A01F0048DA52 /* SongsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EC227A9A01F0048DA52 /* SongsDetailHeaderView.swift */; };
-		62898E2027AC2288006DC02A /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62898E1F27AC2287006DC02A /* SearchRouter.swift */; };
-		62898E2227AC2346006DC02A /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62898E2127AC2346006DC02A /* SearchInteractor.swift */; };
-		62A4FB7F27AC2BF50012D0E0 /* SongsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A4FB7E27AC2BF50012D0E0 /* SongsInteractor.swift */; };
-		62A4FB8127AC2BFF0012D0E0 /* SongsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A4FB8027AC2BFF0012D0E0 /* SongsRouter.swift */; };
 		62DF1EEF27A6E1E6004F09D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */; };
 		62DF1EF827A6E1E7004F09D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62DF1EF727A6E1E7004F09D1 /* Assets.xcassets */; };
 		62DF1EFB27A6E1E7004F09D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DF1EF927A6E1E7004F09D1 /* LaunchScreen.storyboard */; };
@@ -70,10 +66,6 @@
 		62609EBE27A99FED0048DA52 /* SongsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailView.swift; sourceTree = "<group>"; };
 		62609EC027A9A0030048DA52 /* SongsDetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailDescriptionView.swift; sourceTree = "<group>"; };
 		62609EC227A9A01F0048DA52 /* SongsDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailHeaderView.swift; sourceTree = "<group>"; };
-		62898E1F27AC2287006DC02A /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
-		62898E2127AC2346006DC02A /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
-		62A4FB7E27AC2BF50012D0E0 /* SongsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsInteractor.swift; sourceTree = "<group>"; };
-		62A4FB8027AC2BFF0012D0E0 /* SongsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsRouter.swift; sourceTree = "<group>"; };
 		62DF1EEB27A6E1E6004F09D1 /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62DF1EF727A6E1E7004F09D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625945082841323D008ED047 /* Alamofire in Frameworks */,
+				621B7CAF2844BDD100C114A1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,8 +120,6 @@
 		620A23FC27A951BD009FD43F /* SearchSongs */ = {
 			isa = PBXGroup;
 			children = (
-				62A4FB7D27AC2BDE0012D0E0 /* Router */,
-				62A4FB7C27AC2BD50012D0E0 /* Interactor */,
 				620A240027A951D6009FD43F /* Controllers */,
 				620A23FF27A951D2009FD43F /* View */,
 				620A23FE27A951CB009FD43F /* Presenter */,
@@ -176,38 +166,6 @@
 				62609EBC27A99FB30048DA52 /* SongsDescriptionViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		62898E1D27AC2272006DC02A /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				62898E1F27AC2287006DC02A /* SearchRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		62898E1E27AC227B006DC02A /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				62898E2127AC2346006DC02A /* SearchInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		62A4FB7C27AC2BD50012D0E0 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				62A4FB7E27AC2BF50012D0E0 /* SongsInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		62A4FB7D27AC2BDE0012D0E0 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				62A4FB8027AC2BFF0012D0E0 /* SongsRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		62DF1EE227A6E1E6004F09D1 = {
@@ -349,8 +307,6 @@
 		62DF1F2227A6E58D004F09D1 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				62898E1E27AC227B006DC02A /* Interactor */,
-				62898E1D27AC2272006DC02A /* Router */,
 				620A23F927A95101009FD43F /* Presenter */,
 				620A23F627A9508E009FD43F /* Builder */,
 				62DF1F2427A6E5A1004F09D1 /* Controller */,
@@ -423,7 +379,7 @@
 			);
 			name = iTunesClient;
 			packageProductDependencies = (
-				625945072841323D008ED047 /* Alamofire */,
+				621B7CAE2844BDD100C114A1 /* Alamofire */,
 			);
 			productName = iTunesClient;
 			productReference = 62DF1EEB27A6E1E6004F09D1 /* iTunesClient.app */;
@@ -454,7 +410,7 @@
 			);
 			mainGroup = 62DF1EE227A6E1E6004F09D1;
 			packageReferences = (
-				625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				621B7CAD2844BDD100C114A1 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
 			);
 			productRefGroup = 62DF1EEC27A6E1E6004F09D1 /* Products */;
 			projectDirPath = "";
@@ -483,7 +439,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				620A240C27A952C1009FD43F /* SongsCell.swift in Sources */,
-				62898E2227AC2346006DC02A /* SearchInteractor.swift in Sources */,
 				620A23F227A95026009FD43F /* AppDetailDescriptionView.swift in Sources */,
 				620A23F827A950A6009FD43F /* SearchModuleBuilder.swift in Sources */,
 				62609EB927A99F360048DA52 /* SongsDetailViewController.swift in Sources */,
@@ -495,8 +450,6 @@
 				620A240427A95209009FD43F /* SongsCellModelFactory.swift.swift in Sources */,
 				620A23EE27A94FBB009FD43F /* AppDetailHeaderViewController.swift in Sources */,
 				62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */,
-				62A4FB8127AC2BFF0012D0E0 /* SongsRouter.swift in Sources */,
-				62898E2027AC2288006DC02A /* SearchRouter.swift in Sources */,
 				62DF1F2027A6E566004F09D1 /* ITunesSong.swift in Sources */,
 				620A23F427A95046009FD43F /* AppDetailHeaderView.swift in Sources */,
 				62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */,
@@ -520,7 +473,6 @@
 				62609EC327A9A01F0048DA52 /* SongsDetailHeaderView.swift in Sources */,
 				62DF1F3427A6E879004F09D1 /* AppDetailViewController.swift in Sources */,
 				620A23FB27A95110009FD43F /* SearchViewInput.swift in Sources */,
-				62A4FB7F27AC2BF50012D0E0 /* SongsInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +686,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		621B7CAD2844BDD100C114A1 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -745,9 +697,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		625945072841323D008ED047 /* Alamofire */ = {
+		621B7CAE2844BDD100C114A1 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 621B7CAD2844BDD100C114A1 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */

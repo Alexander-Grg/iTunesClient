@@ -41,16 +41,15 @@ final class ITunesSearchService {
         
         networkManager.dataRequest(request) { [weak self] result in
             guard let self = self else {
-                completion?(.success([]))
+//                completion?(.success([]))
                 return
             }
             switch result {
-                
             case .success(let data):
                 do {
-                let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
-                                       let apps = result.results
-                                       completion?(.success(apps))
+                    let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
+                    let apps = result.results
+                    completion?(.success(apps))
                 } catch {
                     print(error)
                     completion?(.failure(error as! AFError))
@@ -76,7 +75,6 @@ final class ITunesSearchService {
                 return
             }
             switch result {
-                
             case .success(let data):
                 do {
                     let result = try self.decoder.decode(ITunesSearchResult<ITunesSong>.self, from: data)
@@ -84,7 +82,6 @@ final class ITunesSearchService {
                     completion?(.success(apps))
                 } catch {
                     print(error)
-                    completion?(.failure(error as! AFError))
                 }
             case .failure(let error):
                 completion?(.failure(error))

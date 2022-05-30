@@ -23,15 +23,6 @@ protocol SearchSongsViewOutput: AnyObject {
 
 final class SearchSongsPresenter {
     
-    let interactor: SearchSongsInteractorInput
-    let router: SearchSongsRouterInput
-    
-    
-    init(interactor: SearchSongsInteractorInput, router: SearchSongsRouterInput) {
-        self.interactor = interactor
-        self.router = router
-    }
-    
     weak var viewInput: (UIViewController & SearchSongsViewInput)?
     
     private let searchService = ITunesSearchService()
@@ -41,7 +32,6 @@ final class SearchSongsPresenter {
             guard let self = self else { return }
             self.viewInput?.throbber(show: false)
             switch result {
-                
             case .success(let songs):
                 guard !songs.isEmpty else {
                     self.viewInput?.showNoResults()
@@ -49,7 +39,6 @@ final class SearchSongsPresenter {
                 }
                 self.viewInput?.hideNoResults()
                 self.viewInput?.searchResults = songs
-                
             case .failure(let error):
                 self.viewInput?.showError(error: error)
             }
@@ -66,24 +55,10 @@ extension SearchSongsPresenter: SearchSongsViewOutput {
     
     func viewDidSearch(with query: String) {
         self.viewInput?.throbber(show: true)
-        interactor.requestSongs(with: query) { [weak self] result in
-            guard let self = self else { return }
-            self.viewInput?.throbber(show: false)
-            switch result {
-            case .success(let apps):
-                guard !apps.isEmpty else {
-                    self.viewInput?.showNoResults()
-                    return
-                }
-                self.viewInput?.hideNoResults()
-                self.viewInput?.searchResults = apps
-            case .failure(let error):
-                self.viewInput?.showError(error: error)
-            }
-        }
+        self.requestApps(with: query)
     }
     
     func viewDidSelectApp(_ songs: ITunesSong) {
-        self.router.openDetails(for: songs)
+        self.openAppDetails(with: songs)
     }
 }

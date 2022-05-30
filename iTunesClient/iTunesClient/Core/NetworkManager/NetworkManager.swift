@@ -15,35 +15,34 @@ final class NetworkManager {
     
     public func dataRequest(_ request: WebRequest, then completion: DataCompletion?) {
         AF.request(request.url, method: request.method, parameters: request.parameters).validate().responseData { [weak self] response in
-            switch response.result {
-            case .success(let data):
-                completion?(.success(data))
-            case .failure(let error):
-                self?.logError(error, request: request)
-                completion?(.failure(error))
+               switch response.result {
+               case .success(let data):
+                   completion?(.success(data))
+               case .failure(let error):
+                   self?.logError(error, request: request)
+                   completion?(.failure(error))
             }
         }
     }
     
     public func jsonRequest(_ request: WebRequest, then completion: JSONCompletion?) {
-
         AF.request(
-            request.url,
-            method: request.method,
-            parameters: request.parameters).responseData { response in
-            switch response.result {
-                
-            case .success(let data):
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
-                    completion?(.success(json))
-                } catch
-                {
-                    print("jsonError")
-                }
-            case .failure(let error):
-                self.logError(error, request: request)
-                completion?(.failure(error))
+               request.url,
+               method: request.method,
+               parameters: request.parameters).responseData { response in
+               switch response.result {
+                   
+               case .success(let data):
+                   do {
+                       let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                       completion?(.success(json))
+                   } catch
+                   {
+                       print("jsonError")
+                   }
+               case .failure(let error):
+                   self.logError(error, request: request)
+                   completion?(.failure(error))
             }
         }
     }

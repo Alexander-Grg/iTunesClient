@@ -25,28 +25,10 @@ final class SearchPresenter {
     
     weak var viewInput: (UIViewController & SearchViewInput)?
     
-    let interactor: SearchInteractorInput
+    private let searchService = ITunesSearchService()
     
-    let router: SearchRouterInput
-    
-//    private let searchService = ITunesSearchService()
-    
-    init(interactor: SearchInteractorInput, router: SearchRouterInput) {
-        self.interactor = interactor
-        self.router = router
-    }
-    
-    private func openAppDetails(with app: ITunesApp) {
-        let appDetailViewController = AppDetailViewController(app: app)
-        self.viewInput?.navigationController?.pushViewController(appDetailViewController, animated: true)
-    }
-}
-
-extension SearchPresenter: SearchViewOutput {
-    
-    func viewDidSearch(with query: String) {
-        self.viewInput?.throbber(show: true)
-        interactor.requestApps(with: query) { [weak self] result in
+    private func requestApps(with query: String) {
+        self.searchService.getApps(forQuery: query) { [weak self] result in
             guard let self = self else { return }
             self.viewInput?.throbber(show: false)
             switch result {
@@ -57,14 +39,25 @@ extension SearchPresenter: SearchViewOutput {
                 }
                 self.viewInput?.hideNoResults()
                 self.viewInput?.searchResults = apps
-                
             case .failure(let error):
                 self.viewInput?.showError(error: error)
             }
         }
     }
+    private func openAppDetails(with app: ITunesApp) {
+        let appDetailViewController = AppDetailViewController(app: app)
+        self.viewInput?.navigationController?.pushViewController(appDetailViewController, animated: true)
+    }
+}
+
+extension SearchPresenter: SearchViewOutput {
+    
+    func viewDidSearch(with query: String) {
+        self.viewInput?.throbber(show: true)
+        self.requestApps(with: query)
+    }
     
     func viewDidSelectApp(_ app: ITunesApp) {
-        self.router.openDetails(for: app)
+        self.openAppDetails(with: app)
     }
 }
