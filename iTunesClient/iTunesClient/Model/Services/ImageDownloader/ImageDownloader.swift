@@ -13,7 +13,7 @@ typealias DownloadImageCompletion = (_ image: UIImage?, _ error: Error?) -> Void
 final class ImageDownloader {
     
     public func getImage(fromUrl url: URLConvertible, completion: @escaping DownloadImageCompletion) {
-        Alamofire.request(url).response(completionHandler: { (dataResponse) in
+        AF.request(url).response(completionHandler: { (dataResponse) in
             if let error = dataResponse.error {
                 completion(nil, error)
                 return

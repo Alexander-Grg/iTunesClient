@@ -10,8 +10,8 @@ import Alamofire
 
 final class ITunesSearchService {
     
-    public typealias CompletionApps = (Result<[ITunesApp]>) -> Void
-    public typealias CompletionSongs = (Result<[ITunesSong]>) -> Void
+    public typealias CompletionApps = (AFResult<[ITunesApp]>) -> Void
+    public typealias CompletionSongs = (AFResult<[ITunesSong]>) -> Void
     
     private let networkManager = NetworkManager()
     private let decoder = JSONDecoder()
@@ -41,23 +41,22 @@ final class ITunesSearchService {
         
         networkManager.dataRequest(request) { [weak self] result in
             guard let self = self else {
-                completion?(.success([]))
+//                completion?(.success([]))
                 return
             }
-            result
-                .withValue { data in
-                    do {
-                        let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
-                        let apps = result.results
-                        completion?(.success(apps))
-                    } catch {
-                        print(error)
-                        completion?(.failure(error))
-                    }
+            switch result {
+            case .success(let data):
+                do {
+                    let result = try self.decoder.decode(ITunesSearchResult<ITunesApp>.self, from: data)
+                    let apps = result.results
+                    completion?(.success(apps))
+                } catch {
+                    print(error)
+                    completion?(.failure(error as! AFError))
                 }
-                .withError {
-                    completion?(.failure($0))
-                }
+            case .failure(let error):
+                completion?(.failure(error))
+            }
         }
     }
     
@@ -75,20 +74,18 @@ final class ITunesSearchService {
                 completion?(.success([]))
                 return
             }
-            result
-                .withValue { data in
-                    do {
-                        let result = try self.decoder.decode(ITunesSearchResult<ITunesSong>.self, from: data)
-                        let apps = result.results
-                        completion?(.success(apps))
-                    } catch {
-                        print(error)
-                        completion?(.failure(error))
-                    }
+            switch result {
+            case .success(let data):
+                do {
+                    let result = try self.decoder.decode(ITunesSearchResult<ITunesSong>.self, from: data)
+                    let apps = result.results
+                    completion?(.success(apps))
+                } catch {
+                    print(error)
                 }
-                .withError {
-                    completion?(.failure($0))
-                }
+            case .failure(let error):
+                completion?(.failure(error))
+            }
         }
     }
 }

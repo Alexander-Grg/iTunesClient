@@ -31,18 +31,17 @@ final class SearchSongsPresenter {
         self.searchService.getSongs(forQuery: query) { [weak self] result in
             guard let self = self else { return }
             self.viewInput?.throbber(show: false)
-            result
-                .withValue { songs in
-                    guard !songs.isEmpty else {
-                        self.viewInput?.showNoResults()
-                        return
-                    }
-                    self.viewInput?.hideNoResults()
-                    self.viewInput?.searchResults = songs
+            switch result {
+            case .success(let songs):
+                guard !songs.isEmpty else {
+                    self.viewInput?.showNoResults()
+                    return
                 }
-                .withError {
-                    self.viewInput?.showError(error: $0)
-                }
+                self.viewInput?.hideNoResults()
+                self.viewInput?.searchResults = songs
+            case .failure(let error):
+                self.viewInput?.showError(error: error)
+            }
         }
     }
     private func openAppDetails(with song: ITunesSong) {

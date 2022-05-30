@@ -31,18 +31,17 @@ final class SearchPresenter {
         self.searchService.getApps(forQuery: query) { [weak self] result in
             guard let self = self else { return }
             self.viewInput?.throbber(show: false)
-            result
-                .withValue { apps in
-                    guard !apps.isEmpty else {
-                        self.viewInput?.showNoResults()
-                        return
-                    }
-                    self.viewInput?.hideNoResults()
-                    self.viewInput?.searchResults = apps
+            switch result {
+            case .success(let apps):
+                guard !apps.isEmpty else {
+                    self.viewInput?.showNoResults()
+                    return
                 }
-                .withError {
-                    self.viewInput?.showError(error: $0)
-                }
+                self.viewInput?.hideNoResults()
+                self.viewInput?.searchResults = apps
+            case .failure(let error):
+                self.viewInput?.showError(error: error)
+            }
         }
     }
     private func openAppDetails(with app: ITunesApp) {
