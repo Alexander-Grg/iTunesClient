@@ -10,14 +10,14 @@ import Alamofire
 
 protocol SearchInteractorInput {
     
-    func requestApps(with query: String, completion: @escaping (Result<[ITunesApp]>) -> Void)
+    func requestApps(with query: String, completion: @escaping (AFResult<[ITunesApp]>) -> Void)
 }
 
 final class SearchInteractor: SearchInteractorInput {
     
     private let searchService = ITunesSearchService()
     
-    func requestApps(with query: String, completion: @escaping (Result<[ITunesApp]>) -> Void) {
+    func requestApps(with query: String, completion: @escaping (AFResult<[ITunesApp]>) -> Void) {
         self.searchService.getApps(forQuery: query, then: completion)
     }
 }

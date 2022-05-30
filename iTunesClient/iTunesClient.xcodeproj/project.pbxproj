@@ -19,6 +19,7 @@
 		620A240827A9528E009FD43F /* SearchSongsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240727A9528E009FD43F /* SearchSongsViewInput.swift */; };
 		620A240A27A952AC009FD43F /* SearchSongsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240927A952AC009FD43F /* SearchSongsView.swift */; };
 		620A240C27A952C1009FD43F /* SongsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620A240B27A952C1009FD43F /* SongsCell.swift */; };
+		625945082841323D008ED047 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 625945072841323D008ED047 /* Alamofire */; };
 		62609EB927A99F360048DA52 /* SongsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EB827A99F360048DA52 /* SongsDetailViewController.swift */; };
 		62609EBB27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBA27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift */; };
 		62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBC27A99FB30048DA52 /* SongsDescriptionViewController.swift */; };
@@ -48,11 +49,9 @@
 		62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */; };
 		62DF1F3127A6E838004F09D1 /* AppDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F3027A6E838004F09D1 /* AppDetailView.swift */; };
 		62DF1F3427A6E879004F09D1 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */; };
-		A93DEF1C4E4D40DEEC17EE77 /* Pods_iTunesClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0607E418F42BDDC38C0C9441 /* Pods_iTunesClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0607E418F42BDDC38C0C9441 /* Pods_iTunesClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		620A23ED27A94FBB009FD43F /* AppDetailHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailHeaderViewController.swift; sourceTree = "<group>"; };
 		620A23EF27A94FF0009FD43F /* DescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionViewController.swift; sourceTree = "<group>"; };
 		620A23F127A95026009FD43F /* AppDetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailDescriptionView.swift; sourceTree = "<group>"; };
@@ -96,8 +95,6 @@
 		62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellModel.swift; sourceTree = "<group>"; };
 		62DF1F3027A6E838004F09D1 /* AppDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailView.swift; sourceTree = "<group>"; };
 		62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
-		CD889D17DC1B6739726AA69C /* Pods-iTunesClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesClient.release.xcconfig"; path = "Target Support Files/Pods-iTunesClient/Pods-iTunesClient.release.xcconfig"; sourceTree = "<group>"; };
-		ED6123909CCC0CB1E34A99DC /* Pods-iTunesClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesClient.debug.xcconfig"; path = "Target Support Files/Pods-iTunesClient/Pods-iTunesClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,22 +102,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93DEF1C4E4D40DEEC17EE77 /* Pods_iTunesClient.framework in Frameworks */,
+				625945082841323D008ED047 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37A273EA114E4CD0895A2E6A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				ED6123909CCC0CB1E34A99DC /* Pods-iTunesClient.debug.xcconfig */,
-				CD889D17DC1B6739726AA69C /* Pods-iTunesClient.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		620A23F627A9508E009FD43F /* Builder */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,8 +215,6 @@
 			children = (
 				62DF1EED27A6E1E6004F09D1 /* iTunesClient */,
 				62DF1EEC27A6E1E6004F09D1 /* Products */,
-				37A273EA114E4CD0895A2E6A /* Pods */,
-				D1204648761C541F250F1474 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,14 +406,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		D1204648761C541F250F1474 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0607E418F42BDDC38C0C9441 /* Pods_iTunesClient.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -435,17 +413,18 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 62DF1EFF27A6E1E7004F09D1 /* Build configuration list for PBXNativeTarget "iTunesClient" */;
 			buildPhases = (
-				D21B241FF4E6D507F0B4F8EF /* [CP] Check Pods Manifest.lock */,
 				62DF1EE727A6E1E6004F09D1 /* Sources */,
 				62DF1EE827A6E1E6004F09D1 /* Frameworks */,
 				62DF1EE927A6E1E6004F09D1 /* Resources */,
-				BE4DE87874692E55AE2224A2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = iTunesClient;
+			packageProductDependencies = (
+				625945072841323D008ED047 /* Alamofire */,
+			);
 			productName = iTunesClient;
 			productReference = 62DF1EEB27A6E1E6004F09D1 /* iTunesClient.app */;
 			productType = "com.apple.product-type.application";
@@ -474,6 +453,9 @@
 				Base,
 			);
 			mainGroup = 62DF1EE227A6E1E6004F09D1;
+			packageReferences = (
+				625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 62DF1EEC27A6E1E6004F09D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -494,48 +476,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BE4DE87874692E55AE2224A2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iTunesClient/Pods-iTunesClient-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iTunesClient/Pods-iTunesClient-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iTunesClient/Pods-iTunesClient-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D21B241FF4E6D507F0B4F8EF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iTunesClient-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		62DF1EE727A6E1E6004F09D1 /* Sources */ = {
@@ -716,7 +656,6 @@
 		};
 		62DF1F0027A6E1E7004F09D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED6123909CCC0CB1E34A99DC /* Pods-iTunesClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -745,7 +684,6 @@
 		};
 		62DF1F0127A6E1E7004F09D1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD889D17DC1B6739726AA69C /* Pods-iTunesClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -794,6 +732,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		625945072841323D008ED047 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 625945062841323D008ED047 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 62DF1EE327A6E1E6004F09D1 /* Project object */;
 }

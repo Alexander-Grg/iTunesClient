@@ -10,31 +10,40 @@ import Alamofire
 
 final class NetworkManager {
     
-    public typealias DataCompletion = (Result<Data>) -> Void
-    public typealias JSONCompletion = (Result<[String: Any]?>) -> Void
+    public typealias DataCompletion = (AFResult<Data>) -> Void
+    public typealias JSONCompletion = (AFResult<[String: Any]?>) -> Void
     
     public func dataRequest(_ request: WebRequest, then completion: DataCompletion?) {
-        Alamofire.request(request.url, method: request.method, parameters: request.parameters).validate().responseData { [weak self] response in
-            response.result
-                .withValue { data in
-                    completion?(.success(data))
-                }
-                .withError {
-                    self?.logError($0, request: request)
-                    completion?(.failure($0))
+        AF.request(request.url, method: request.method, parameters: request.parameters).validate().responseData { [weak self] response in
+            switch response.result {
+            case .success(let data):
+                completion?(.success(data))
+            case .failure(let error):
+                self?.logError(error, request: request)
+                completion?(.failure(error))
             }
         }
     }
     
     public func jsonRequest(_ request: WebRequest, then completion: JSONCompletion?) {
-        Alamofire.request(request.url, method: request.method, parameters: request.parameters).validate().responseJSON { [weak self] response in
-            response.result
-                .withValue { json in
-                    completion?(.success(json as? [String: Any]))
+
+        AF.request(
+            request.url,
+            method: request.method,
+            parameters: request.parameters).responseData { response in
+            switch response.result {
+                
+            case .success(let data):
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                    completion?(.success(json))
+                } catch
+                {
+                    print("jsonError")
                 }
-                .withError {
-                    self?.logError($0, request: request)
-                    completion?(.failure($0))
+            case .failure(let error):
+                self.logError(error, request: request)
+                completion?(.failure(error))
             }
         }
     }
