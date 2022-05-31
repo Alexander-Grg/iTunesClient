@@ -20,6 +20,8 @@
 		621B7CAF2844BDD100C114A1 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 621B7CAE2844BDD100C114A1 /* Alamofire */; };
 		625D0F532844C6AE0053D00A /* SearchSongsModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D0F522844C6AE0053D00A /* SearchSongsModuleBuilder.swift */; };
 		625D0F552844C7510053D00A /* SearchModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D0F542844C7510053D00A /* SearchModuleBuilder.swift */; };
+		625D0F572844E73F0053D00A /* ScreenshotsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D0F562844E73F0053D00A /* ScreenshotsVC.swift */; };
+		625D0F592844EFB80053D00A /* ScreenshotsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D0F582844EFB80053D00A /* ScreenshotsControl.swift */; };
 		62609EB927A99F360048DA52 /* SongsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EB827A99F360048DA52 /* SongsDetailViewController.swift */; };
 		62609EBB27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBA27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift */; };
 		62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBC27A99FB30048DA52 /* SongsDescriptionViewController.swift */; };
@@ -60,6 +62,8 @@
 		620A240B27A952C1009FD43F /* SongsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCell.swift; sourceTree = "<group>"; };
 		625D0F522844C6AE0053D00A /* SearchSongsModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSongsModuleBuilder.swift; sourceTree = "<group>"; };
 		625D0F542844C7510053D00A /* SearchModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchModuleBuilder.swift; sourceTree = "<group>"; };
+		625D0F562844E73F0053D00A /* ScreenshotsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsVC.swift; sourceTree = "<group>"; };
+		625D0F582844EFB80053D00A /* ScreenshotsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsControl.swift; sourceTree = "<group>"; };
 		62609EB827A99F360048DA52 /* SongsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailViewController.swift; sourceTree = "<group>"; };
 		62609EBA27A99F8F0048DA52 /* SongsDetailHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailHeaderViewController.swift; sourceTree = "<group>"; };
 		62609EBC27A99FB30048DA52 /* SongsDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDescriptionViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */,
 				620A23ED27A94FBB009FD43F /* AppDetailHeaderViewController.swift */,
 				620A23EF27A94FF0009FD43F /* DescriptionViewController.swift */,
+				625D0F562844E73F0053D00A /* ScreenshotsVC.swift */,
+				625D0F582844EFB80053D00A /* ScreenshotsControl.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -452,6 +458,7 @@
 				620A23EE27A94FBB009FD43F /* AppDetailHeaderViewController.swift in Sources */,
 				62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */,
 				62DF1F2027A6E566004F09D1 /* ITunesSong.swift in Sources */,
+				625D0F572844E73F0053D00A /* ScreenshotsVC.swift in Sources */,
 				620A23F427A95046009FD43F /* AppDetailHeaderView.swift in Sources */,
 				625D0F532844C6AE0053D00A /* SearchSongsModuleBuilder.swift in Sources */,
 				625D0F552844C7510053D00A /* SearchModuleBuilder.swift in Sources */,
@@ -466,6 +473,7 @@
 				62DF1F1B27A6E51B004F09D1 /* ImageDownloader.swift in Sources */,
 				62DF1F1827A6E4DA004F09D1 /* iTunesSearchResult.swift in Sources */,
 				62DF1F2A27A6E7D8004F09D1 /* SearchViewController.swift in Sources */,
+				625D0F592844EFB80053D00A /* ScreenshotsControl.swift in Sources */,
 				62DF1EEF27A6E1E6004F09D1 /* AppDelegate.swift in Sources */,
 				62DF1F3127A6E838004F09D1 /* AppDetailView.swift in Sources */,
 				62DF1F2627A6E5B3004F09D1 /* SearchView.swift in Sources */,

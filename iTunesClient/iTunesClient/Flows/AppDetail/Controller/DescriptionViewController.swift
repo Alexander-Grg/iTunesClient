@@ -36,24 +36,11 @@ final class DescriptionViewController: UIViewController {
         self.fillData()
     }
     
-//    let dateString = "2020-03-09T11:53:39.474Z"
-//    let formatter = ISO8601DateFormatter()
-//    formatter.formatOptions = [
-//        .withInternetDateTime,
-//        .withFractionalSeconds,
-//        .withColonSeparatorInTime,
-//        .withDashSeparatorInDate,
-//        .withTimeZone]
-//    if let date = formatter.date(from: dateString) {
-//        print(date)
-//    } else {
-//        print("Could not convert date")
-//    }
     private func fillData() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         guard let date = formatter.date(from: app.currentVersionReleaseDate) else { return }
-        self.appDetailDescriptionView.versionLabel.text = app.version
+        self.appDetailDescriptionView.versionLabel.text = "Version \(app.version)"
         self.appDetailDescriptionView.descriptionLabel.text = app.releaseNotes
         self.appDetailDescriptionView.lastUpdateLabel.text = "\(String(describing: date))"
     }
