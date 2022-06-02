@@ -1,2 +1,10 @@
 # iTunesClient
-Test project iTunes client MVC
+iTunes client MVP architecture. UI was created fully programmatically by using several UIViewControllers for the one screen with many elements (For the educational purposes)
+
+API source https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1
+
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-06-02 at 16 05 02](https://user-images.githubusercontent.com/87275828/171635747-36e4f5ff-190b-4071-a2d8-d33d502330a2.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-06-02 at 16 01 59](https://user-images.githubusercontent.com/87275828/171635800-bbcab0ea-acc4-42be-bb29-039a364f020a.png)
+![Simulator Screen Shot - iPhone 13 Pro Max - 2022-06-02 at 16 02 39](https://user-images.githubusercontent.com/87275828/171635821-f98ce836-f99a-41a7-8d82-f08c1a693fe8.png)
+
+
