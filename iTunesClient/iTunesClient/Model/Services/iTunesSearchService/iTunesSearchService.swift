@@ -52,7 +52,6 @@ final class ITunesSearchService {
                     completion?(.success(apps))
                 } catch {
                     print(error)
-                    completion?(.failure(error as! AFError))
                 }
             case .failure(let error):
                 completion?(.failure(error))

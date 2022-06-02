@@ -28,10 +28,10 @@
 		62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EBE27A99FED0048DA52 /* SongsDetailView.swift */; };
 		62609EC127A9A0030048DA52 /* SongsDetailDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EC027A9A0030048DA52 /* SongsDetailDescriptionView.swift */; };
 		62609EC327A9A01F0048DA52 /* SongsDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62609EC227A9A01F0048DA52 /* SongsDetailHeaderView.swift */; };
+		629445F428477FFA00AA3B9F /* ExtendedDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629445F328477FFA00AA3B9F /* ExtendedDescriptionView.swift */; };
 		62DF1EEF27A6E1E6004F09D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */; };
 		62DF1EF827A6E1E7004F09D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62DF1EF727A6E1E7004F09D1 /* Assets.xcassets */; };
 		62DF1EFB27A6E1E7004F09D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DF1EF927A6E1E7004F09D1 /* LaunchScreen.storyboard */; };
-		62DF1F0627A6E271004F09D1 /* Monads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F0527A6E271004F09D1 /* Monads.swift */; };
 		62DF1F0927A6E324004F09D1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F0827A6E324004F09D1 /* NetworkManager.swift */; };
 		62DF1F0B27A6E33B004F09D1 /* WebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F0A27A6E33B004F09D1 /* WebRequest.swift */; };
 		62DF1F0E27A6E441004F09D1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F0D27A6E441004F09D1 /* Extensions.swift */; };
@@ -70,12 +70,12 @@
 		62609EBE27A99FED0048DA52 /* SongsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailView.swift; sourceTree = "<group>"; };
 		62609EC027A9A0030048DA52 /* SongsDetailDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailDescriptionView.swift; sourceTree = "<group>"; };
 		62609EC227A9A01F0048DA52 /* SongsDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsDetailHeaderView.swift; sourceTree = "<group>"; };
+		629445F328477FFA00AA3B9F /* ExtendedDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedDescriptionView.swift; sourceTree = "<group>"; };
 		62DF1EEB27A6E1E6004F09D1 /* iTunesClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62DF1EF727A6E1E7004F09D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62DF1EFA27A6E1E7004F09D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62DF1EFC27A6E1E7004F09D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62DF1F0527A6E271004F09D1 /* Monads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monads.swift; sourceTree = "<group>"; };
 		62DF1F0827A6E324004F09D1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		62DF1F0A27A6E33B004F09D1 /* WebRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequest.swift; sourceTree = "<group>"; };
 		62DF1F0D27A6E441004F09D1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -208,7 +208,6 @@
 			children = (
 				62DF1F0727A6E313004F09D1 /* NetworkManager */,
 				62DF1F0327A6E24A004F09D1 /* AppDelegate */,
-				62DF1F0427A6E261004F09D1 /* Monads */,
 				62DF1F0C27A6E435004F09D1 /* Extensions */,
 			);
 			path = Core;
@@ -220,14 +219,6 @@
 				62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		62DF1F0427A6E261004F09D1 /* Monads */ = {
-			isa = PBXGroup;
-			children = (
-				62DF1F0527A6E271004F09D1 /* Monads.swift */,
-			);
-			path = Monads;
 			sourceTree = "<group>";
 		};
 		62DF1F0727A6E313004F09D1 /* NetworkManager */ = {
@@ -303,9 +294,9 @@
 		62DF1F2127A6E57F004F09D1 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				62DF1F2227A6E58D004F09D1 /* SearchApps */,
 				620A23FC27A951BD009FD43F /* SearchSongs */,
 				62DF1F2D27A6E808004F09D1 /* AppDetail */,
-				62DF1F2227A6E58D004F09D1 /* SearchApps */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -351,8 +342,9 @@
 		62DF1F2E27A6E811004F09D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				62DF1F3027A6E838004F09D1 /* AppDetailView.swift */,
+				629445F328477FFA00AA3B9F /* ExtendedDescriptionView.swift */,
 				620A23F127A95026009FD43F /* AppDetailDescriptionView.swift */,
+				62DF1F3027A6E838004F09D1 /* AppDetailView.swift */,
 				620A23F327A95046009FD43F /* AppDetailHeaderView.swift */,
 			);
 			path = View;
@@ -466,7 +458,6 @@
 				62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */,
 				62DF1F1327A6E484004F09D1 /* AppStartManager.swift in Sources */,
 				620A23F027A94FF0009FD43F /* DescriptionViewController.swift in Sources */,
-				62DF1F0627A6E271004F09D1 /* Monads.swift in Sources */,
 				62DF1F1627A6E4B9004F09D1 /* iTunesSearchService.swift in Sources */,
 				62DF1F0927A6E324004F09D1 /* NetworkManager.swift in Sources */,
 				620A240A27A952AC009FD43F /* SearchSongsView.swift in Sources */,
@@ -476,6 +467,7 @@
 				625D0F592844EFB80053D00A /* ScreenshotsControl.swift in Sources */,
 				62DF1EEF27A6E1E6004F09D1 /* AppDelegate.swift in Sources */,
 				62DF1F3127A6E838004F09D1 /* AppDetailView.swift in Sources */,
+				629445F428477FFA00AA3B9F /* ExtendedDescriptionView.swift in Sources */,
 				62DF1F2627A6E5B3004F09D1 /* SearchView.swift in Sources */,
 				620A240627A95221009FD43F /* SongsSearchViewController.swift in Sources */,
 				62DF1F0E27A6E441004F09D1 /* Extensions.swift in Sources */,

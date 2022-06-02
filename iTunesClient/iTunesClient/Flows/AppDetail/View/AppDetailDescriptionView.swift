@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailViewDelegate: AnyObject {
+    func openTap(isTapped: Bool)
+}
+
 final class AppDetailDescriptionView: UIView {
     
 //    MARK: - Subviews
@@ -32,9 +36,8 @@ final class AppDetailDescriptionView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14.0)
         label.textColor = .black
-        label.numberOfLines = 5
-        label.sizeToFit()
         label.textAlignment = .left
+        label.numberOfLines = 4
         
         return label }()
     
@@ -56,10 +59,25 @@ final class AppDetailDescriptionView: UIView {
         
         return label }()
     
+    private(set) lazy var extendButton: UIButton = {
+        let b = UIButton(type: .system)
+        b.translatesAutoresizingMaskIntoConstraints = false
+        b.addTarget(self, action: #selector(self.tapHandler), for: .touchUpInside)
+//        b.setImage(UIImage(systemName: "doc.text.magnifyingglass"), for: .normal)
+//        b.backgroundColor = .systemBlue
+        b.setTitle("...show more", for: .normal)
+        
+        
+        return b
+    }()
+    
+    weak var delegate: DetailViewDelegate?
+    
 //    MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupConstraints()
+ 
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,7 +92,7 @@ final class AppDetailDescriptionView: UIView {
         self.addSubview(self.descriptionLabel)
         self.addSubview(self.versionHistoryButton)
         self.addSubview(self.lastUpdateLabel)
-        
+        self.addSubview(self.extendButton)
         NSLayoutConstraint.activate([
             
             self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor , constant: 20.0),
@@ -87,7 +105,7 @@ final class AppDetailDescriptionView: UIView {
 
             self.descriptionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,constant: 10),
             self.descriptionLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -10),
-            self.descriptionLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            self.descriptionLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             
             self.versionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 10.0),
             self.versionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16.0),
@@ -98,7 +116,18 @@ final class AppDetailDescriptionView: UIView {
             self.lastUpdateLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
             self.lastUpdateLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 292.0),
             self.lastUpdateLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor, constant: -10),
+//
+            self.extendButton.topAnchor.constraint(equalTo: self.lastUpdateLabel.bottomAnchor, constant: 100),
+            self.extendButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
+            self.extendButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
+            
         ])
     }
     
+    @objc private func tapHandler() {
+        self.delegate?.openTap(isTapped: true)
+    }
+
 }
+
+

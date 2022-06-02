@@ -42,6 +42,7 @@ final class AppDetailHeaderViewController: UIViewController {
         self.appDetailHeaderView.ratingLabel.text = app.averageRating.flatMap {
             "\($0)" }
     }
+    
     private func downloadImage() {
         guard let url = self.app.iconUrl else { return }
         self.imageDownloader.getImage(fromUrl: url) { [weak self] (image, _) in

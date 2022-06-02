@@ -26,7 +26,6 @@ final class AppDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureUI()
-        
     }
     
     private func configureUI() {
@@ -36,7 +35,6 @@ final class AppDetailViewController: UIViewController {
         self.addHeaderViewController()
         self.addDescriptionViewController()
         self.addScreenshotsViewController()
-        
         
     }
     
@@ -62,7 +60,7 @@ final class AppDetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             self.descriptionViewController.view.topAnchor.constraint(equalTo: self.headerViewController.view.bottomAnchor),
             self.descriptionViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.descriptionViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -15),
+            self.descriptionViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
          
         ])
     }
@@ -77,7 +75,9 @@ final class AppDetailViewController: UIViewController {
             self.screenshotsVC.view.topAnchor.constraint(equalTo: self.descriptionViewController.view.bottomAnchor),
             self.screenshotsVC.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.screenshotsVC.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.screenshotsVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10)
+            self.screenshotsVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -60)
         ])
     }
 }
+
+
