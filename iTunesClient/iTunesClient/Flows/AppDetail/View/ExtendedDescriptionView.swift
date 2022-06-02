@@ -75,8 +75,8 @@ final class ExtendedDescriptionView: UIView {
         NSLayoutConstraint.activate([
 
             self.descriptionText.topAnchor.constraint(equalTo: self.topAnchor),
-            self.descriptionText.leftAnchor.constraint(equalTo: self.leftAnchor),
-            self.descriptionText.rightAnchor.constraint(equalTo: self.rightAnchor),
+            self.descriptionText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10),
+            self.descriptionText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             self.descriptionText.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             self.extendButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 180),

@@ -37,7 +37,7 @@ final class SongsDetailHeaderView: UIView {
     private(set) lazy var openButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Открыть", for: .normal)
+        button.setTitle("Open", for: .normal)
         button.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         button.layer.cornerRadius = 16.0
         return button }()
@@ -48,6 +48,25 @@ final class SongsDetailHeaderView: UIView {
         label.textColor = .lightGray
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         return label }()
+    
+    private(set) lazy var headLabel: UILabel = {
+        let l = UILabel()
+        l.translatesAutoresizingMaskIntoConstraints = false
+        l.textAlignment = .left
+        l.font = UIFont.boldSystemFont(ofSize: 24)
+        l.text = "Music"
+        
+        return l
+    }()
+    
+    private(set) lazy var headImage: UIImageView = {
+        let i = UIImageView()
+        i.translatesAutoresizingMaskIntoConstraints = false
+        i.image = UIImage(systemName: "applelogo")
+        i.tintColor = .black
+ 
+       return i
+    }()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -66,26 +85,53 @@ final class SongsDetailHeaderView: UIView {
         self.addSubview(self.subtitleLabel)
         self.addSubview(self.openButton)
         self.addSubview(self.ratingLabel)
+        self.addSubview(self.headImage)
+        self.addSubview(self.headLabel)
         
         NSLayoutConstraint.activate([
-            self.imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.0),
+     
+        
+            
+ 
+            
+         
+            
+            self.headLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
+            self.headLabel.leftAnchor.constraint(equalTo: self.headImage.rightAnchor, constant: 3),
+            
+            self.headImage.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.5),
+            self.headImage.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor, constant: 16),
+            self.headImage.widthAnchor.constraint(equalToConstant: 19),
+            self.headImage.heightAnchor.constraint(equalToConstant: 24),
+            
+                        
+            self.imageView.topAnchor.constraint(equalTo: self.headLabel.bottomAnchor, constant: 10),
             self.imageView.leftAnchor.constraint(equalTo:self.leftAnchor ,constant: 16.0),
             self.imageView.widthAnchor.constraint(equalToConstant: 120.0),
             self.imageView.heightAnchor.constraint(equalToConstant: 120.0),
-            self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.0),
+            
+            
+
+            self.titleLabel.topAnchor.constraint(equalTo: self.headLabel.bottomAnchor, constant: 10),
             self.titleLabel.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16.0),
             self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16.0),
+            
             self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 12.0),
             self.subtitleLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
             self.subtitleLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
+            
             self.openButton.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16.0),
             self.openButton.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor),
             self.openButton.widthAnchor.constraint(equalToConstant: 80.0),
             self.openButton.heightAnchor.constraint(equalToConstant: 32.0),
+            
             self.ratingLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24.0),
             self.ratingLabel.leftAnchor.constraint(equalTo: self.imageView.leftAnchor),
             self.ratingLabel.widthAnchor.constraint(equalToConstant: 100.0),
-            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+       
+            
         ])
     }
     

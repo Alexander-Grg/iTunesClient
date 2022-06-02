@@ -72,20 +72,26 @@ final class AppDetailHeaderView: UIView {
             self.imageView.leftAnchor.constraint(equalTo:self.leftAnchor ,constant: 16.0),
             self.imageView.widthAnchor.constraint(equalToConstant: 120.0),
             self.imageView.heightAnchor.constraint(equalToConstant: 120.0),
+            
             self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.0),
             self.titleLabel.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16.0),
             self.titleLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16.0),
+            
             self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 12.0),
             self.subtitleLabel.leftAnchor.constraint(equalTo: self.titleLabel.leftAnchor),
             self.subtitleLabel.rightAnchor.constraint(equalTo: self.titleLabel.rightAnchor),
+            
             self.openButton.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16.0),
             self.openButton.bottomAnchor.constraint(equalTo: self.imageView.bottomAnchor),
             self.openButton.widthAnchor.constraint(equalToConstant: 80.0),
             self.openButton.heightAnchor.constraint(equalToConstant: 32.0),
+            
             self.ratingLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24.0),
             self.ratingLabel.leftAnchor.constraint(equalTo: self.imageView.leftAnchor),
             self.ratingLabel.widthAnchor.constraint(equalToConstant: 100.0),
             self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            
+            
         ])
     }
     
