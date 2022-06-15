@@ -13,6 +13,7 @@ final class SearchModuleBuilder {
         let presenter = SearchPresenter()
         let viewController = SearchViewController(presenter: presenter)
         presenter.viewInput = viewController
+        
         return viewController
 }
 }
