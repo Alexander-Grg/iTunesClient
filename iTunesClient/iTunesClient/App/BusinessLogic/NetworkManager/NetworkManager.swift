@@ -14,7 +14,9 @@ final class NetworkManager {
     public typealias JSONCompletion = (AFResult<[String: Any]?>) -> Void
     
     public func dataRequest(_ request: WebRequest, then completion: DataCompletion?) {
-        AF.request(request.url, method: request.method, parameters: request.parameters).validate().responseData { [weak self] response in
+        AF.request(request.url,
+                   method: request.method,
+                   parameters: request.parameters).validate().responseData { [weak self] response in
                switch response.result {
                case .success(let data):
                    completion?(.success(data))
@@ -34,10 +36,9 @@ final class NetworkManager {
                    
                case .success(let data):
                    do {
-                       let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                       let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                        completion?(.success(json))
-                   } catch
-                   {
+                   } catch {
                        print("jsonError")
                    }
                case .failure(let error):

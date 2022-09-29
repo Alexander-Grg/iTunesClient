@@ -28,4 +28,3 @@ final class SearchRouter: SearchRouterInput {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
-

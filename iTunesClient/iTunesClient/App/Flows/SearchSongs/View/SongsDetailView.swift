@@ -47,7 +47,7 @@ final class SongsDetailView: UIView {
         self.throbber.translatesAutoresizingMaskIntoConstraints = false
         self.imageView.addSubview(self.throbber)
     }
-    
+//
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             self.imageView.widthAnchor.constraint(equalToConstant: 100.0),

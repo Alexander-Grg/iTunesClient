@@ -31,7 +31,7 @@ class ScreenshotsVC: UIViewController {
     private var currentIndex: Int = 0
     private let app: ITunesApp
     
-    //    MARK: - Init
+    // MARK: - Init
         init(app: ITunesApp) {
             self.app = app
             super.init(nibName: nil, bundle: nil)
@@ -51,11 +51,16 @@ class ScreenshotsVC: UIViewController {
     
     private func setupPageController() {
         
-        self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        self.pageController = UIPageViewController(transitionStyle: .scroll,
+                                                   navigationOrientation: .horizontal,
+                                                   options: nil)
         self.pageController?.dataSource = self
         self.pageController?.delegate = self
         self.pageController?.view.backgroundColor = .clear
-        self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
+        self.pageController?.view.frame = CGRect(x: 0,
+                                                 y: 0,
+                                                 width: self.view.frame.width,
+                                                 height: self.view.frame.height)
         self.addChild(self.pageController!)
         self.view.addSubview(self.pageController!.view)
         
@@ -69,7 +74,8 @@ class ScreenshotsVC: UIViewController {
 
 extension ScreenshotsVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
         guard let currentVC = viewController as? PageVC else {
             return nil
@@ -83,12 +89,13 @@ extension ScreenshotsVC: UIPageViewControllerDataSource, UIPageViewControllerDel
         
         index -= 1
         
-        let vc: PageVC = PageVC(with: pages[index], app: self.app, currentPage: 0)
+        let viewController: PageVC = PageVC(with: pages[index], app: self.app, currentPage: 0)
         
-        return vc
+        return viewController
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController,
+                            viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         guard let currentVC = viewController as? PageVC else {
             return nil
@@ -102,9 +109,9 @@ extension ScreenshotsVC: UIPageViewControllerDataSource, UIPageViewControllerDel
         
         index += 1
         
-        let vc: PageVC = PageVC(with: pages[index], app: self.app, currentPage: 0)
+        let viewController: PageVC = PageVC(with: pages[index], app: self.app, currentPage: 0)
         
-        return vc
+        return viewController
     }
     
     func presentationCount(for pageViewController: UIPageViewController) -> Int {

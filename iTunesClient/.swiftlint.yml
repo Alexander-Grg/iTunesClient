@@ -1,0 +1,6 @@
+# rule identifiers turned on by default to exclude from running
+disabled_rules:
+   - trailing_whitespace
+   - force_cast
+   - force_unwrapping
+   - force_try

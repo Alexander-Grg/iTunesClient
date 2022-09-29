@@ -50,22 +50,22 @@ final class SongsDetailHeaderView: UIView {
         return label }()
     
     private(set) lazy var headLabel: UILabel = {
-        let l = UILabel()
-        l.translatesAutoresizingMaskIntoConstraints = false
-        l.textAlignment = .left
-        l.font = UIFont.boldSystemFont(ofSize: 24)
-        l.text = "Music"
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.text = "Music"
         
-        return l
+        return label
     }()
     
     private(set) lazy var headImage: UIImageView = {
-        let i = UIImageView()
-        i.translatesAutoresizingMaskIntoConstraints = false
-        i.image = UIImage(systemName: "applelogo")
-        i.tintColor = .black
- 
-       return i
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "applelogo")
+        image.tintColor = .black
+        
+        return image
     }()
     
     // MARK: - Init
@@ -89,13 +89,6 @@ final class SongsDetailHeaderView: UIView {
         self.addSubview(self.headLabel)
         
         NSLayoutConstraint.activate([
-     
-        
-            
- 
-            
-         
-            
             self.headLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 10),
             self.headLabel.leftAnchor.constraint(equalTo: self.headImage.rightAnchor, constant: 3),
             
@@ -104,13 +97,10 @@ final class SongsDetailHeaderView: UIView {
             self.headImage.widthAnchor.constraint(equalToConstant: 19),
             self.headImage.heightAnchor.constraint(equalToConstant: 24),
             
-                        
             self.imageView.topAnchor.constraint(equalTo: self.headLabel.bottomAnchor, constant: 10),
-            self.imageView.leftAnchor.constraint(equalTo:self.leftAnchor ,constant: 16.0),
+            self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16.0),
             self.imageView.widthAnchor.constraint(equalToConstant: 120.0),
             self.imageView.heightAnchor.constraint(equalToConstant: 120.0),
-            
-            
 
             self.titleLabel.topAnchor.constraint(equalTo: self.headLabel.bottomAnchor, constant: 10),
             self.titleLabel.leftAnchor.constraint(equalTo: self.imageView.rightAnchor, constant: 16.0),
@@ -128,12 +118,7 @@ final class SongsDetailHeaderView: UIView {
             self.ratingLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24.0),
             self.ratingLabel.leftAnchor.constraint(equalTo: self.imageView.leftAnchor),
             self.ratingLabel.widthAnchor.constraint(equalToConstant: 100.0),
-            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            
-       
-            
+            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
-    
-    
 }

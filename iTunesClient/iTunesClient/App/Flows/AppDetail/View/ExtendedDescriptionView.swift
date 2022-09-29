@@ -9,7 +9,7 @@ import UIKit
 
 final class ExtendedDescriptionView: UIView {
     
-//    MARK: - Properties
+// MARK: - Properties
     
     let view = AppDetailDescriptionView()
     var isLarge = false
@@ -33,18 +33,17 @@ final class ExtendedDescriptionView: UIView {
     }()
     
     private(set) lazy var extendButton: UIButton = {
-        let b = UIButton(type: .system)
-        b.translatesAutoresizingMaskIntoConstraints = false
-        b.addTarget(self, action: #selector(self.tap), for: .touchUpInside)
-        b.setTitle("...show less", for: .normal)
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(self.tap), for: .touchUpInside)
+        button.setTitle("...show less", for: .normal)
         
-        
-        return b
+        return button
     }()
     
     weak var delegate: DetailViewDelegate?
     
-//    MARK: - Init
+// MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +56,7 @@ final class ExtendedDescriptionView: UIView {
         self.configureUI()
     }
     
-//    MARK: - Methods
+// MARK: - Methods
     
     @objc func tap() {
         self.removeFromSuperview()
@@ -98,5 +97,3 @@ final class ExtendedDescriptionView: UIView {
     }
     
 }
-
-

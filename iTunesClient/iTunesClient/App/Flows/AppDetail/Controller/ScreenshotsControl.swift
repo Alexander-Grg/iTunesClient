@@ -37,7 +37,6 @@ final class PageVC: UIViewController {
         return image
     }()
     
-    
     var page: Pages
     var images: [String] = []
     let app: ITunesApp
@@ -69,14 +68,14 @@ final class PageVC: UIViewController {
             self.imageSC.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.imageSC.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.imageSC.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.imageSC.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            self.imageSC.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
     
     private func loadImage() {
         let loader = ImageDownloader()
         let url = self.app.screenshotUrls[page.index]
-        loader.getImage(fromUrl: url) { [weak self] image, error in
+        loader.getImage(fromUrl: url) { [weak self] image, _ in
             guard let self = self else { return }
             self.imageSC.image = image
         }

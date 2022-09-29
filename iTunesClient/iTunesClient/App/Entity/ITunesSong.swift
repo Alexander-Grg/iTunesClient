@@ -47,4 +47,3 @@ public struct ITunesSong: Codable {
         self.genre = genre
     }
 }
-

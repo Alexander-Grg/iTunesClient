@@ -37,7 +37,7 @@ final class AppDetailHeaderView: UIView {
     private(set) lazy var openButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Открыть", for: .normal)
+        button.setTitle("Open", for: .normal)
         button.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
         button.layer.cornerRadius = 16.0
         return button }()
@@ -69,7 +69,7 @@ final class AppDetailHeaderView: UIView {
         
         NSLayoutConstraint.activate([
             self.imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.0),
-            self.imageView.leftAnchor.constraint(equalTo:self.leftAnchor ,constant: 16.0),
+            self.imageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16.0),
             self.imageView.widthAnchor.constraint(equalToConstant: 120.0),
             self.imageView.heightAnchor.constraint(equalToConstant: 120.0),
             
@@ -90,10 +90,6 @@ final class AppDetailHeaderView: UIView {
             self.ratingLabel.leftAnchor.constraint(equalTo: self.imageView.leftAnchor),
             self.ratingLabel.widthAnchor.constraint(equalToConstant: 100.0),
             self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-            
-            
         ])
     }
-    
-    
 }

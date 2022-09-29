@@ -28,4 +28,3 @@ final class SearchSongsRouter: SearchSongsRouterInput {
 //        UIApplication.shared.open(url, options: [:], completionHandler: nil)
 //    }
 }
-

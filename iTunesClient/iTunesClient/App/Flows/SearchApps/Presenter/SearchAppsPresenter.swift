@@ -1,5 +1,5 @@
 //
-//  SearchViewInput.swift
+//  SearchAppsPresenter.swift
 //  iTunesClient
 //
 //  Created by Alexander Grigoryev on 01.02.2022.
@@ -30,9 +30,9 @@ final class SearchPresenter {
     private func requestApps(with query: String) {
         self.searchService.getApps(forQuery: query) { [weak self] result in
             guard let self = self else { return }
-            self.viewInput?.throbber(show: false)
             switch result {
             case .success(let apps):
+                self.viewInput?.throbber(show: false)
                 guard !apps.isEmpty else {
                     self.viewInput?.showNoResults()
                     return
@@ -40,10 +40,12 @@ final class SearchPresenter {
                 self.viewInput?.hideNoResults()
                 self.viewInput?.searchResults = apps
             case .failure(let error):
+                self.viewInput?.throbber(show: false)
                 self.viewInput?.showError(error: error)
             }
         }
     }
+    
     private func openAppDetails(with app: ITunesApp) {
         let appDetailViewController = AppDetailViewController(app: app)
         self.viewInput?.navigationController?.pushViewController(appDetailViewController, animated: true)
@@ -54,7 +56,10 @@ extension SearchPresenter: SearchViewOutput {
     
     func viewDidSearch(with query: String) {
         self.viewInput?.throbber(show: true)
-        self.requestApps(with: query)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.requestApps(with: query)
+        }
+ 
     }
     
     func viewDidSelectApp(_ app: ITunesApp) {

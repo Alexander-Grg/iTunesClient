@@ -16,7 +16,7 @@ final class SongsDescriptionViewController: UIViewController {
         return self.view as! SongsDetailDescriptionView
     }
     
-//    MARK: - Init
+// MARK: - Init
     init(songs: ITunesSong) {
         self.songs = songs
         super.init(nibName: nil, bundle: nil)
@@ -26,7 +26,7 @@ final class SongsDescriptionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    MARK: - Lifecycle
+// MARK: - Lifecycle
     override func loadView() {
         super.loadView()
         self.view = SongsDetailDescriptionView()

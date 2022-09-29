@@ -46,7 +46,7 @@ final class SongsSearchViewController: UIViewController {
         super.loadView()
         self.view = SearchSongsView()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -60,30 +60,9 @@ final class SongsSearchViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.throbber(show: false)
     }
-    
-    // MARK: - Private
-    
-//    internal func throbber(show: Bool) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = show
-//    }
-//
-//    internal func showError(error: Error) {
-//        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-//        let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(actionOk)
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//
-//    internal func showNoResults() {
-//        self.searchView.emptyResultView.isHidden = false
-//    }
-//
-//    internal func hideNoResults() {
-//        self.searchView.emptyResultView.isHidden = true
-//    }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension SongsSearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,20 +81,17 @@ extension SongsSearchViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension SongsSearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let songs = searchResults[indexPath.row]
-//        let appDetaillViewController = AppDetailViewController()
-//        appDetaillViewController.app = app
         self.presenter.viewDidSelectApp(songs)
-//        navigationController?.pushViewController(appDetaillViewController, animated: true)
     }
 }
 
-//MARK: - UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension SongsSearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -131,14 +107,14 @@ extension SongsSearchViewController: UISearchBarDelegate {
     }
 }
 
-//MARK: - Input
+// MARK: - Input
 extension SongsSearchViewController: SearchSongsViewInput {
     
     func showError(error: Error) {
-    let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-    let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionOk)
-    self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     func showNoResults() {
         self.searchSongsView.emptyResultView.isHidden = false
@@ -149,6 +125,7 @@ extension SongsSearchViewController: SearchSongsViewInput {
     func hideNoResults() {
         self.searchSongsView.emptyResultView.isHidden = true
     }
-    func throbber(show: Bool) { UIApplication.shared.isNetworkActivityIndicatorVisible = show
+    func throbber(show: Bool) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = show
     }
 }

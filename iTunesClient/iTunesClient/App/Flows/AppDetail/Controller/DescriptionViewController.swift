@@ -17,7 +17,7 @@ final class DescriptionViewController: UIViewController {
     
     private var extendedDescriptionView = ExtendedDescriptionView()
     
-//    MARK: - Init
+// MARK: - Init
     init(app: ITunesApp) {
         self.app = app
         super.init(nibName: nil, bundle: nil)
@@ -27,13 +27,12 @@ final class DescriptionViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-//    MARK: - Lifecycle
+// MARK: - Lifecycle
     override func loadView() {
         super.loadView()
         let view2 = AppDetailDescriptionView()
         self.view = view2
         view2.delegate = self
-        
     }
     
     override func viewDidLoad() {
@@ -45,7 +44,6 @@ final class DescriptionViewController: UIViewController {
         } else {
             appDetailDescriptionView.extendButton.isHidden = true
         }
-    
     }
     
     private func fillData() {
@@ -59,8 +57,6 @@ final class DescriptionViewController: UIViewController {
     }
     
     private func loadExtendedDescriptionView() {
-    
-        
         self.view.addSubview(self.extendedDescriptionView)
         self.extendedDescriptionView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -70,17 +66,14 @@ final class DescriptionViewController: UIViewController {
             self.extendedDescriptionView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             self.extendedDescriptionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
-
     }
 }
 
 extension DescriptionViewController: DetailViewDelegate {
-
 
     func openTap(isTapped: Bool) {
         if isTapped == true {
             self.loadExtendedDescriptionView()
         }
     }
-    
 }

@@ -46,7 +46,7 @@ final class SearchViewController: UIViewController {
         super.loadView()
         self.view = SearchView()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -60,30 +60,9 @@ final class SearchViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.throbber(show: false)
     }
-    
-    // MARK: - Private
-    
-//    internal func throbber(show: Bool) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = show
-//    }
-//
-//    internal func showError(error: Error) {
-//        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-//        let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-//        alert.addAction(actionOk)
-//        self.present(alert, animated: true, completion: nil)
-//    }
-//
-//    internal func showNoResults() {
-//        self.searchView.emptyResultView.isHidden = false
-//    }
-//
-//    internal func hideNoResults() {
-//        self.searchView.emptyResultView.isHidden = true
-//    }
 }
 
-//MARK: - UITableViewDataSource
+// MARK: - UITableViewDataSource
 extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -102,20 +81,17 @@ extension SearchViewController: UITableViewDataSource {
     }
 }
 
-//MARK: - UITableViewDelegate
+// MARK: - UITableViewDelegate
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let app = searchResults[indexPath.row]
-//        let appDetaillViewController = AppDetailViewController()
-//        appDetaillViewController.app = app
         self.presenter.viewDidSelectApp(app)
-//        navigationController?.pushViewController(appDetaillViewController, animated: true)
     }
 }
 
-//MARK: - UISearchBarDelegate
+// MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -131,14 +107,14 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-//MARK: - Input
+// MARK: - Input
 extension SearchViewController: SearchViewInput {
     
     func showError(error: Error) {
-    let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
-    let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(actionOk)
-    self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
     }
     func showNoResults() {
         self.searchView.emptyResultView.isHidden = false
@@ -149,6 +125,15 @@ extension SearchViewController: SearchViewInput {
     func hideNoResults() {
         self.searchView.emptyResultView.isHidden = true
     }
-    func throbber(show: Bool) { UIApplication.shared.isNetworkActivityIndicatorVisible = show
+    
+    func throbber(show: Bool) {
+        let indicatorView = ActivityIndicator()
+        self.view.addSubview(indicatorView)
+        
+        if show {
+            indicatorView.indicator.startAnimating()
+        } else if show == false {
+            indicatorView.indicator.stopAnimating()
+        }
     }
 }

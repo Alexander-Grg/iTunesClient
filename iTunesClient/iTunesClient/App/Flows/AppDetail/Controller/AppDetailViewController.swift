@@ -30,7 +30,7 @@ final class AppDetailViewController: UIViewController {
     
     private func configureUI() {
         self.view.backgroundColor = .white
-        self.navigationController?.navigationBar.tintColor = UIColor.white;
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationItem.largeTitleDisplayMode = .never
         self.addHeaderViewController()
         self.addDescriptionViewController()
@@ -45,9 +45,9 @@ final class AppDetailViewController: UIViewController {
         self.headerViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.headerViewController.view.topAnchor.constraint(equalTo:self.view.safeAreaLayoutGuide.topAnchor),
+            self.headerViewController.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             self.headerViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.headerViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            self.headerViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
     }
     
@@ -58,10 +58,12 @@ final class AppDetailViewController: UIViewController {
         self.descriptionViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            self.descriptionViewController.view.topAnchor.constraint(equalTo: self.headerViewController.view.bottomAnchor),
-            self.descriptionViewController.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            self.descriptionViewController.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-         
+            self.descriptionViewController.view.topAnchor.constraint(
+                equalTo: self.headerViewController.view.bottomAnchor),
+            self.descriptionViewController.view.leftAnchor.constraint(
+                equalTo: self.view.leftAnchor),
+            self.descriptionViewController.view.rightAnchor.constraint(
+                equalTo: self.view.rightAnchor)
         ])
     }
     
@@ -79,5 +81,3 @@ final class AppDetailViewController: UIViewController {
         ])
     }
 }
-
-

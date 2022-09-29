@@ -1,5 +1,5 @@
 //
-//  SearchSongsViewInput.swift
+//  SearchSongsPresenter.swift
 //  iTunesClient
 //
 //  Created by Alexander Grigoryev on 01.02.2022.

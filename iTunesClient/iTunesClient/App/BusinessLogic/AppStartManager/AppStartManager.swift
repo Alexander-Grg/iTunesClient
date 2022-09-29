@@ -39,4 +39,3 @@ final class AppStartManager {
         return navVC
     }()
 }
-
