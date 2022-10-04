@@ -58,7 +58,7 @@ final class SongsSearchViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.throbber(show: false)
+        self.showIndicator(show: false)
     }
 }
 
@@ -125,7 +125,16 @@ extension SongsSearchViewController: SearchSongsViewInput {
     func hideNoResults() {
         self.searchSongsView.emptyResultView.isHidden = true
     }
-    func throbber(show: Bool) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = show
+    
+    func reloadView() {
+        self.searchSongsView.tableView.reloadData()
+    }
+    
+    func showIndicator(show: Bool) {
+        if show {
+            self.searchSongsView.indicatorView.indicator.startAnimating()
+        } else {
+            self.searchSongsView.indicatorView.indicator.stopAnimating()
+        }
     }
 }

@@ -13,7 +13,8 @@ protocol SearchViewInput: AnyObject {
     func showError(error: Error)
     func showNoResults()
     func hideNoResults()
-    func throbber(show: Bool)
+    func showIndicator(show: Bool)
+    func reloadView()
 }
 
 protocol SearchViewOutput: AnyObject {
@@ -32,7 +33,7 @@ final class SearchPresenter {
             guard let self = self else { return }
             switch result {
             case .success(let apps):
-                self.viewInput?.throbber(show: false)
+                self.viewInput?.showIndicator(show: false)
                 guard !apps.isEmpty else {
                     self.viewInput?.showNoResults()
                     return
@@ -40,7 +41,7 @@ final class SearchPresenter {
                 self.viewInput?.hideNoResults()
                 self.viewInput?.searchResults = apps
             case .failure(let error):
-                self.viewInput?.throbber(show: false)
+                self.viewInput?.showIndicator(show: false)
                 self.viewInput?.showError(error: error)
             }
         }
@@ -55,11 +56,9 @@ final class SearchPresenter {
 extension SearchPresenter: SearchViewOutput {
     
     func viewDidSearch(with query: String) {
-        self.viewInput?.throbber(show: true)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.requestApps(with: query)
-        }
- 
+        self.viewInput?.showIndicator(show: true)
+        self.requestApps(with: query)
+        self.viewInput?.reloadView()
     }
     
     func viewDidSelectApp(_ app: ITunesApp) {

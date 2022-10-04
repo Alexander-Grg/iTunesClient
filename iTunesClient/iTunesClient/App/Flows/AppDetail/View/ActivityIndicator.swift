@@ -9,11 +9,8 @@ import UIKit
 
 final class ActivityIndicator: UIView {
     
-    // MARK: - Subviews
-    let throbber = UIActivityIndicatorView(style: .medium)
-    
     private(set) lazy var indicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView()
+        let indicator = UIActivityIndicatorView(style: .medium)
         indicator.hidesWhenStopped = true
         indicator.translatesAutoresizingMaskIntoConstraints = false
         
@@ -36,18 +33,18 @@ final class ActivityIndicator: UIView {
     
     private func configureUI() {
         self.backgroundColor = .white
-        self.addImageViewThrobber()
-        self.setupConstraints()
+        self.addIndicator()
+//        self.setupConstraints()
     }
     
-    private func addImageViewThrobber() {
+    private func addIndicator() {
         self.addSubview(self.indicator)
     }
     
-    private func setupConstraints() {
-        NSLayoutConstraint.activate([
-            self.indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            self.indicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-            ])
-    }
+//    private func setupConstraints() {
+//        NSLayoutConstraint.activate([
+//            self.indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+//            self.indicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+//            ])
+//    }
 }

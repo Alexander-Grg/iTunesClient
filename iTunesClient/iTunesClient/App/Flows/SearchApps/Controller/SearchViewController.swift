@@ -58,7 +58,7 @@ final class SearchViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.throbber(show: false)
+        self.showIndicator(show: false)
     }
 }
 
@@ -109,7 +109,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 // MARK: - Input
 extension SearchViewController: SearchViewInput {
-    
+
     func showError(error: Error) {
         let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -126,14 +126,15 @@ extension SearchViewController: SearchViewInput {
         self.searchView.emptyResultView.isHidden = true
     }
     
-    func throbber(show: Bool) {
-        let indicatorView = ActivityIndicator()
-        self.view.addSubview(indicatorView)
-        
+    func reloadView() {
+        self.searchView.tableView.reloadData()
+    }
+    
+    func showIndicator(show: Bool) {
         if show {
-            indicatorView.indicator.startAnimating()
-        } else if show == false {
-            indicatorView.indicator.stopAnimating()
+            searchView.indicatorView.indicator.startAnimating()
+        } else {
+            searchView.indicatorView.indicator.stopAnimating()
         }
     }
 }

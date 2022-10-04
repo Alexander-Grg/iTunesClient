@@ -15,6 +15,7 @@ final class SearchView: UIView {
     let tableView = UITableView()
     let emptyResultView = UIView()
     let emptyResultLabel = UILabel()
+    let indicatorView = ActivityIndicator()
     
     // MARK: - Init
     
@@ -32,6 +33,7 @@ final class SearchView: UIView {
     
     private func configureUI() {
         self.backgroundColor = .white
+        self.addIndicator()
         self.addSearchBar()
         self.addTableView()
         self.addEmptyResultView()
@@ -68,10 +70,16 @@ final class SearchView: UIView {
         self.emptyResultView.addSubview(self.emptyResultLabel)
     }
     
+    func addIndicator() {
+        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(indicatorView)
+    }
+    
     private func setupConstraints() {
         let safeArea = self.safeAreaLayoutGuide
         
         NSLayoutConstraint.activate([
+         
             self.searchBar.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
             self.searchBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             self.searchBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
@@ -87,7 +95,10 @@ final class SearchView: UIView {
             self.emptyResultView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             self.emptyResultLabel.topAnchor.constraint(equalTo: self.emptyResultView.topAnchor, constant: 12.0),
             self.emptyResultLabel.leadingAnchor.constraint(equalTo: self.emptyResultView.leadingAnchor),
-            self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor)
+            self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
+            
+            self.indicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            self.indicatorView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)
             ])
     }
 }

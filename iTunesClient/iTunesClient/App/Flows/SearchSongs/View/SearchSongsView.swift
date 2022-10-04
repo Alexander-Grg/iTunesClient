@@ -15,6 +15,7 @@ final class SearchSongsView: UIView {
     let tableView = UITableView()
     let emptyResultView = UIView()
     let emptyResultLabel = UILabel()
+    let indicatorView = ActivityIndicator()
     
     // MARK: - Init
     
@@ -32,6 +33,7 @@ final class SearchSongsView: UIView {
     
     private func configureUI() {
         self.backgroundColor = .white
+        self.addIndicator()
         self.addSearchBar()
         self.addTableView()
         self.addEmptyResultView()
@@ -51,6 +53,11 @@ final class SearchSongsView: UIView {
         self.tableView.isHidden = true
         self.tableView.tableFooterView = UIView()
         self.addSubview(self.tableView)
+    }
+    
+    func addIndicator() {
+        self.indicatorView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(indicatorView)
     }
     
     private func addEmptyResultView() {
@@ -87,7 +94,10 @@ final class SearchSongsView: UIView {
             self.emptyResultView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             self.emptyResultLabel.topAnchor.constraint(equalTo: self.emptyResultView.topAnchor, constant: 12.0),
             self.emptyResultLabel.leadingAnchor.constraint(equalTo: self.emptyResultView.leadingAnchor),
-            self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor)
+            self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
+            
+            self.indicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            self.indicatorView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)
             ])
     }
 }
