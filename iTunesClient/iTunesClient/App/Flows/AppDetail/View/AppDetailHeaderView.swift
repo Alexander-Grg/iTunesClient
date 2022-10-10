@@ -37,8 +37,11 @@ final class AppDetailHeaderView: UIView {
     private(set) lazy var openButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Open", for: .normal)
-        button.backgroundColor = UIColor(white: 0.9, alpha: 1.0)
+        button.setTitle("GET", for: .normal)
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        button.backgroundColor = UIColor.systemBlue
+        button.setTitleColor(.white, for: .normal)
+    
         button.layer.cornerRadius = 16.0
         return button }()
     

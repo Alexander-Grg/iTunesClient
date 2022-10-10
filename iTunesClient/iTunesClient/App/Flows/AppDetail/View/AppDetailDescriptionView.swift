@@ -128,7 +128,6 @@ final class AppDetailDescriptionView: UIView {
                                                        constant: 292.0),
             self.lastUpdateLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor,
                                                          constant: -10),
-            //
             self.extendButton.topAnchor.constraint(equalTo: self.lastUpdateLabel.bottomAnchor,
                                                    constant: 100),
             self.extendButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
