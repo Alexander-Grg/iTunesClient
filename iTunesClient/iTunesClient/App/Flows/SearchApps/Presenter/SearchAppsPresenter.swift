@@ -15,11 +15,13 @@ protocol SearchViewInput: AnyObject {
     func hideNoResults()
     func showIndicator(show: Bool)
     func reloadView()
+    func isResultEmptyCheck()
 }
 
 protocol SearchViewOutput: AnyObject {
     func viewDidSearch(with query: String)
     func viewDidSelectApp(_ app: ITunesApp)
+    func viewDidLoaded()
 }
 
 final class SearchPresenter {
@@ -54,6 +56,10 @@ final class SearchPresenter {
 }
 
 extension SearchPresenter: SearchViewOutput {
+    
+    func viewDidLoaded() {
+        self.viewInput?.isResultEmptyCheck()
+    }
     
     func viewDidSearch(with query: String) {
         self.viewInput?.showIndicator(show: true)

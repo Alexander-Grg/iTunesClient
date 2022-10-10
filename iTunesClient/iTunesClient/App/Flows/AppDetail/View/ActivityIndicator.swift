@@ -34,17 +34,9 @@ final class ActivityIndicator: UIView {
     private func configureUI() {
         self.backgroundColor = .white
         self.addIndicator()
-//        self.setupConstraints()
     }
     
     private func addIndicator() {
         self.addSubview(self.indicator)
     }
-    
-//    private func setupConstraints() {
-//        NSLayoutConstraint.activate([
-//            self.indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-//            self.indicator.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-//            ])
-//    }
 }

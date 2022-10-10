@@ -14,6 +14,7 @@ final class SearchView: UIView {
     let searchBar = UISearchBar()
     let tableView = UITableView()
     let emptyResultView = UIView()
+    let startEmptyResultLabel = UILabel()
     let emptyResultLabel = UILabel()
     let indicatorView = ActivityIndicator()
     
@@ -65,8 +66,17 @@ final class SearchView: UIView {
         self.emptyResultLabel.textColor = UIColor.darkGray
         self.emptyResultLabel.textAlignment = .center
         self.emptyResultLabel.font = UIFont.systemFont(ofSize: 12.0)
+        self.emptyResultLabel.isHidden = true
+        
+        self.startEmptyResultLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.startEmptyResultLabel.text = "Enter a search request"
+        self.startEmptyResultLabel.textColor = UIColor.darkGray
+        self.startEmptyResultLabel.textAlignment = .center
+        self.startEmptyResultLabel.font = UIFont.systemFont(ofSize: 12.0)
+        self.startEmptyResultLabel.isHidden = true
         
         self.addSubview(self.emptyResultView)
+        self.emptyResultView.addSubview(self.startEmptyResultLabel)
         self.emptyResultView.addSubview(self.emptyResultLabel)
     }
     
@@ -96,6 +106,9 @@ final class SearchView: UIView {
             self.emptyResultLabel.topAnchor.constraint(equalTo: self.emptyResultView.topAnchor, constant: 12.0),
             self.emptyResultLabel.leadingAnchor.constraint(equalTo: self.emptyResultView.leadingAnchor),
             self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
+            self.startEmptyResultLabel.topAnchor.constraint(equalTo: self.emptyResultView.topAnchor, constant: 12.0),
+            self.startEmptyResultLabel.leadingAnchor.constraint(equalTo: self.emptyResultView.leadingAnchor),
+            self.startEmptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
             
             self.indicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
             self.indicatorView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)

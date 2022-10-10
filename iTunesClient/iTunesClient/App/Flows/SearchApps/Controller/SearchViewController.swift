@@ -54,6 +54,7 @@ final class SearchViewController: UIViewController {
         self.searchView.tableView.register(AppCell.self, forCellReuseIdentifier: Constants.reuseIdentifier)
         self.searchView.tableView.delegate = self
         self.searchView.tableView.dataSource = self
+        self.presenter.viewDidLoaded()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,13 +95,21 @@ extension SearchViewController: UITableViewDelegate {
 // MARK: - UISearchBarDelegate
 extension SearchViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchBar.resignFirstResponder()
+            self.isResultEmptyCheck()
+        }
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else {
             searchBar.resignFirstResponder()
             return
         }
-        if query.count == 0 {
+        if query.isEmpty {
             searchBar.resignFirstResponder()
+            self.isResultEmptyCheck()
             return
         }
         self.presenter.viewDidSearch(with: query)
@@ -109,7 +118,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 // MARK: - Input
 extension SearchViewController: SearchViewInput {
-
+    
     func showError(error: Error) {
         let alert = UIAlertController(title: "Error", message: "\(error.localizedDescription)", preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -117,8 +126,19 @@ extension SearchViewController: SearchViewInput {
         self.present(alert, animated: true, completion: nil)
     }
     func showNoResults() {
-        self.searchView.emptyResultView.isHidden = false
+        self.searchView.emptyResultLabel.isHidden = false
+        self.searchView.startEmptyResultLabel.isHidden = true
         self.searchResults = []
+        self.searchView.emptyResultView.isHidden = false
+        self.searchView.tableView.reloadData()
+    }
+    
+    func isResultEmptyCheck() {
+        self.searchView.emptyResultView.isHidden = false
+        self.searchView.emptyResultLabel.isHidden = true
+        self.searchView.startEmptyResultLabel.isHidden = false
+        self.searchResults = []
+        self.searchView.isHidden = false
         self.searchView.tableView.reloadData()
     }
     

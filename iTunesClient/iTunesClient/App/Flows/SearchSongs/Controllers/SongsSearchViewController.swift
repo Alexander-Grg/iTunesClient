@@ -54,6 +54,7 @@ final class SongsSearchViewController: UIViewController {
         self.searchSongsView.tableView.register(SongsCell.self, forCellReuseIdentifier: Constants.reuseIdentifier)
         self.searchSongsView.tableView.delegate = self
         self.searchSongsView.tableView.dataSource = self
+        self.presenter.viewDidLoaded()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -94,13 +95,21 @@ extension SongsSearchViewController: UITableViewDelegate {
 // MARK: - UISearchBarDelegate
 extension SongsSearchViewController: UISearchBarDelegate {
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            searchBar.resignFirstResponder()
+            self.isResultEmptyCheck()
+        }
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else {
             searchBar.resignFirstResponder()
             return
         }
-        if query.count == 0 {
+        if query.isEmpty {
             searchBar.resignFirstResponder()
+            self.isResultEmptyCheck()
             return
         }
         self.presenter.viewDidSearch(with: query)
@@ -118,12 +127,23 @@ extension SongsSearchViewController: SearchSongsViewInput {
     }
     func showNoResults() {
         self.searchSongsView.emptyResultView.isHidden = false
+        self.searchSongsView.startEmptyResultLabel.isHidden = true
+        self.searchSongsView.emptyResultLabel.isHidden = false
         self.searchResults = []
         self.searchSongsView.tableView.reloadData()
     }
     
     func hideNoResults() {
         self.searchSongsView.emptyResultView.isHidden = true
+    }
+    
+    func isResultEmptyCheck() {
+        self.searchSongsView.emptyResultView.isHidden = false
+        self.searchSongsView.emptyResultLabel.isHidden = true
+        self.searchSongsView.startEmptyResultLabel.isHidden = false
+        self.searchResults = []
+        self.searchSongsView.isHidden = false
+        self.searchSongsView.tableView.reloadData()
     }
     
     func reloadView() {

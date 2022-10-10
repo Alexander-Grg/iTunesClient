@@ -15,11 +15,13 @@ protocol SearchSongsViewInput: AnyObject {
     func hideNoResults()
     func showIndicator(show: Bool)
     func reloadView()
+    func isResultEmptyCheck()
 }
 
 protocol SearchSongsViewOutput: AnyObject {
     func viewDidSearch(with query: String)
     func viewDidSelectApp(_ app: ITunesSong)
+    func viewDidLoaded()
 }
 
 final class SearchSongsPresenter {
@@ -31,6 +33,7 @@ final class SearchSongsPresenter {
     private func requestApps(with query: String) {
         self.searchService.getSongs(forQuery: query) { [weak self] result in
             guard let self = self else { return }
+            
             switch result {
             case .success(let songs):
                 self.viewInput?.showIndicator(show: false)
@@ -54,6 +57,10 @@ final class SearchSongsPresenter {
 }
 
 extension SearchSongsPresenter: SearchSongsViewOutput {
+    
+    func viewDidLoaded() {
+        self.viewInput?.isResultEmptyCheck()
+    }
     
     func viewDidSearch(with query: String) {
         self.viewInput?.showIndicator(show: true)
