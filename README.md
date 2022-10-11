@@ -1,5 +1,5 @@
 # iTunesClient
-iTunes client MVP architecture. UI was created fully programmatically by using several UIViewControllers for the one screen with many elements (For the educational purposes)
+iTunes client MVP architecture. UI was created fully programmatically by using several UIViewControllers for the one screen with many elements.
 
 API source https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1
 
