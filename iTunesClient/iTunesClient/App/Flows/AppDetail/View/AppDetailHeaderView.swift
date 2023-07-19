@@ -41,7 +41,7 @@ final class AppDetailHeaderView: UIView {
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         button.backgroundColor = UIColor.systemBlue
         button.setTitleColor(.white, for: .normal)
-    
+        
         button.layer.cornerRadius = 16.0
         return button }()
     
@@ -51,6 +51,12 @@ final class AppDetailHeaderView: UIView {
         label.textColor = .lightGray
         label.font = UIFont.boldSystemFont(ofSize: 20.0)
         return label }()
+    
+    private(set) lazy var starsRatingImages: StarRatingView = {
+        let starView = StarRatingView()
+        starView.translatesAutoresizingMaskIntoConstraints = false
+        return starView
+    }()
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -69,6 +75,7 @@ final class AppDetailHeaderView: UIView {
         self.addSubview(self.subtitleLabel)
         self.addSubview(self.openButton)
         self.addSubview(self.ratingLabel)
+        self.addSubview(self.starsRatingImages)
         
         NSLayoutConstraint.activate([
             self.imageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 12.0),
@@ -91,8 +98,12 @@ final class AppDetailHeaderView: UIView {
             
             self.ratingLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24.0),
             self.ratingLabel.leftAnchor.constraint(equalTo: self.imageView.leftAnchor),
-            self.ratingLabel.widthAnchor.constraint(equalToConstant: 100.0),
-            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.ratingLabel.widthAnchor.constraint(equalToConstant: 40.0),
+            self.ratingLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            
+            self.starsRatingImages.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24),
+            self.starsRatingImages.leftAnchor.constraint(equalTo: self.ratingLabel.rightAnchor),
+            self.starsRatingImages.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
 }

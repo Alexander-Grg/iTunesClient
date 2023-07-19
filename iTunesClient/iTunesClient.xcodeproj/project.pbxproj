@@ -48,6 +48,8 @@
 		62DF1F2A27A6E7D8004F09D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */; };
 		62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */; };
 		62DF1F3427A6E879004F09D1 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */; };
+		71ADE4F62A684A55006B1C95 /* UiImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADE4F52A684A55006B1C95 /* UiImageExt.swift */; };
+		71ADE4FA2A684C9A006B1C95 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,8 @@
 		62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellModel.swift; sourceTree = "<group>"; };
 		62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		71ADE4F52A684A55006B1C95 /* UiImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageExt.swift; sourceTree = "<group>"; };
+		71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 		627C315D2859E76500C9D2A8 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				71ADE4F72A684C77006B1C95 /* New Group */,
 				62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */,
 				627C31602859E7C300C9D2A8 /* Assembly */,
 				627C315F2859E7A200C9D2A8 /* BusinessLogic */,
@@ -244,6 +249,7 @@
 		62DF1F0227A6E22F004F09D1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				71ADE4F42A684A40006B1C95 /* Extensions */,
 				62DF1F0C27A6E435004F09D1 /* Color */,
 			);
 			path = Core;
@@ -303,6 +309,7 @@
 		62DF1F2127A6E57F004F09D1 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				71ADE4F82A684C85006B1C95 /* ReusableViews */,
 				62DF1F2227A6E58D004F09D1 /* SearchApps */,
 				620A23FC27A951BD009FD43F /* SearchSongs */,
 				62DF1F2D27A6E808004F09D1 /* AppDetail */,
@@ -369,6 +376,29 @@
 				625D0F582844EFB80053D00A /* ScreenshotsControl.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		71ADE4F42A684A40006B1C95 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				71ADE4F52A684A55006B1C95 /* UiImageExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		71ADE4F72A684C77006B1C95 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		71ADE4F82A684C85006B1C95 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */,
+			);
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +518,7 @@
 				627C31632859E8B200C9D2A8 /* SearchSongsModuleBuilder.swift in Sources */,
 				62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */,
 				62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */,
+				71ADE4F62A684A55006B1C95 /* UiImageExt.swift in Sources */,
 				62DF1F1327A6E484004F09D1 /* AppStartManager.swift in Sources */,
 				620A23F027A94FF0009FD43F /* DescriptionViewController.swift in Sources */,
 				62DF1F1627A6E4B9004F09D1 /* iTunesSearchService.swift in Sources */,
@@ -500,6 +531,7 @@
 				62DF1EEF27A6E1E6004F09D1 /* AppDelegate.swift in Sources */,
 				629445F428477FFA00AA3B9F /* ExtendedDescriptionView.swift in Sources */,
 				62DF1F2627A6E5B3004F09D1 /* SearchView.swift in Sources */,
+				71ADE4FA2A684C9A006B1C95 /* StarRatingView.swift in Sources */,
 				620A240627A95221009FD43F /* SongsSearchViewController.swift in Sources */,
 				62DF1F0E27A6E441004F09D1 /* Extensions.swift in Sources */,
 				62DF1F1E27A6E550004F09D1 /* ITunesApp.swift in Sources */,

@@ -52,7 +52,7 @@ final class DescriptionViewController: UIViewController {
         guard let date = formatter.date(from: app.currentVersionReleaseDate) else { return }
         self.appDetailDescriptionView.versionLabel.text = "Version \(app.version)"
         self.appDetailDescriptionView.descriptionLabel.text = app.releaseNotes
-        self.appDetailDescriptionView.lastUpdateLabel.text = "\(String(describing: date))"
+        self.appDetailDescriptionView.lastUpdateLabel.text = "\(String(describing: date).dropLast(9))"
         self.extendedDescriptionView.configureData(app)
     }
     
