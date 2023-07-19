@@ -20,6 +20,6 @@ final class AppCellModelFactory {
         return AppCellModel(title: model.appName,
                             subtitle: model.company,
                             rating: model.averageRating.flatMap { "\($0)" },
-                            avatar: model.iconUrl))
+                            avatar: model.iconUrl)
     }
 }

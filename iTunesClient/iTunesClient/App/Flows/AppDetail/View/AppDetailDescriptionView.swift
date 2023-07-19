@@ -42,7 +42,7 @@ final class AppDetailDescriptionView: UIView {
         return label }()
     
     private (set) lazy var versionHistoryButton: UIButton = {
-        let button = UIButton()
+        let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Version History", for: .normal)
         button.setTitleColor(UIColor.systemBlue, for: .normal)
@@ -101,9 +101,7 @@ final class AppDetailDescriptionView: UIView {
             self.versionHistoryButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
                                                            constant: 20.0),
             self.versionHistoryButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor,
-                                                             constant: 25.0),
-            self.versionHistoryButton.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
-                                                            constant: 270.0),
+                                                             constant: -15.0),
             
             self.descriptionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
                                                         constant: 10),
@@ -123,9 +121,7 @@ final class AppDetailDescriptionView: UIView {
             
             self.lastUpdateLabel.topAnchor.constraint(equalTo: self.versionHistoryButton.bottomAnchor,
                                                       constant: 10.0),
-            self.lastUpdateLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),
-            self.lastUpdateLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
-                                                       constant: 292.0),
+            self.lastUpdateLabel.leftAnchor.constraint(equalTo: self.versionHistoryButton.leftAnchor),
             self.lastUpdateLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor,
                                                          constant: -10),
             self.extendButton.topAnchor.constraint(equalTo: self.lastUpdateLabel.bottomAnchor,

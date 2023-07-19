@@ -35,6 +35,13 @@ final class SongsCell: UITableViewCell {
         return label
     }()
     
+    private(set) lazy var avatarImage: UIImageView = {
+          let image = UIImageView()
+          image.translatesAutoresizingMaskIntoConstraints = false
+          image.contentMode = .scaleAspectFit
+          return image
+      }()
+
     // MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -53,6 +60,9 @@ final class SongsCell: UITableViewCell {
         self.titleLabel.text = cellModel.trackName
         self.subtitleLabel.text = cellModel.collectionName
         self.ratingLabel.text = cellModel.collectionName
+        if let avatarURL = URL(string: cellModel.artwork ?? "") {
+               self.avatarImage.imageFrom(url: avatarURL)
+           }
     }
     
     // MARK: - UI
@@ -62,16 +72,27 @@ final class SongsCell: UITableViewCell {
     }
     
     private func configureUI() {
+        self.addAvatar()
         self.addTitleLabel()
         self.addSubtitleLabel()
         self.addRatingLabel()
     }
     
+    private func addAvatar() {
+         self.contentView.addSubview(self.avatarImage)
+         NSLayoutConstraint.activate([
+             self.avatarImage.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 0),
+             self.avatarImage.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 0),
+             self.avatarImage.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -300),
+             self.avatarImage.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: 0)
+         ])
+     }
+    
     private func addTitleLabel() {
         self.contentView.addSubview(self.titleLabel)
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8.0),
-            self.titleLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12.0),
+            self.titleLabel.leftAnchor.constraint(equalTo: self.avatarImage.rightAnchor, constant: 8.0),
             self.titleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
             ])
     }
@@ -80,7 +101,7 @@ final class SongsCell: UITableViewCell {
         self.contentView.addSubview(self.subtitleLabel)
         NSLayoutConstraint.activate([
             self.subtitleLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 4.0),
-            self.subtitleLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12.0),
+            self.subtitleLabel.leftAnchor.constraint(equalTo: self.avatarImage.rightAnchor, constant: 8),
             self.subtitleLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
             ])
     }
@@ -89,7 +110,7 @@ final class SongsCell: UITableViewCell {
         self.contentView.addSubview(self.ratingLabel)
         NSLayoutConstraint.activate([
             self.ratingLabel.topAnchor.constraint(equalTo: self.subtitleLabel.bottomAnchor, constant: 4.0),
-            self.ratingLabel.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12.0),
+            self.ratingLabel.leftAnchor.constraint(equalTo: self.avatarImage.rightAnchor, constant: 8),
             self.ratingLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -40.0)
             ])
     }

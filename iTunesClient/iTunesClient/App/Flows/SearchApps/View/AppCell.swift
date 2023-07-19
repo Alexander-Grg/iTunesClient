@@ -59,7 +59,9 @@ final class AppCell: UITableViewCell {
     func configure(with cellModel: AppCellModel) {
         self.titleLabel.text = cellModel.title
         self.subtitleLabel.text = cellModel.subtitle
-        self.ratingLabel.text = cellModel.rating
+        if let ratingNumber = cellModel.rating {
+                  self.ratingLabel.text = String(ratingNumber.dropLast(3))
+              }
         if let avatarURL = URL(string: cellModel.avatar ?? "") {
                 self.avatarImage.imageFrom(url: avatarURL)
             }
