@@ -34,10 +34,10 @@ final class SearchSongsView: UIView {
     
     private func configureUI() {
         self.backgroundColor = .white
-        self.addIndicator()
         self.addSearchBar()
         self.addTableView()
         self.addEmptyResultView()
+        self.addIndicator()
         self.setupConstraints()
     }
     
@@ -83,6 +83,7 @@ final class SearchSongsView: UIView {
         self.addSubview(self.emptyResultView)
         self.emptyResultView.addSubview(self.emptyResultLabel)
         self.emptyResultView.addSubview(self.startEmptyResultLabel)
+        self.emptyResultView.addSubview(self.indicatorView)
     }
     
     private func setupConstraints() {

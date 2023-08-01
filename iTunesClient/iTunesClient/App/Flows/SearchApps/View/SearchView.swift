@@ -34,10 +34,10 @@ final class SearchView: UIView {
     
     private func configureUI() {
         self.backgroundColor = .white
-        self.addIndicator()
         self.addSearchBar()
         self.addTableView()
         self.addEmptyResultView()
+        self.addIndicator()
         self.setupConstraints()
     }
     
@@ -78,6 +78,7 @@ final class SearchView: UIView {
         self.addSubview(self.emptyResultView)
         self.emptyResultView.addSubview(self.startEmptyResultLabel)
         self.emptyResultView.addSubview(self.emptyResultLabel)
+        self.emptyResultView.addSubview(self.indicatorView)
     }
     
     func addIndicator() {
@@ -99,6 +100,9 @@ final class SearchView: UIView {
             self.tableView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
             
+            self.indicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            self.indicatorView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor),
+            
             self.emptyResultView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor),
             self.emptyResultView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
             self.emptyResultView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor),
@@ -108,10 +112,7 @@ final class SearchView: UIView {
             self.emptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
             self.startEmptyResultLabel.topAnchor.constraint(equalTo: self.emptyResultView.topAnchor, constant: 12.0),
             self.startEmptyResultLabel.leadingAnchor.constraint(equalTo: self.emptyResultView.leadingAnchor),
-            self.startEmptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor),
-            
-            self.indicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
-            self.indicatorView.centerYAnchor.constraint(equalTo: safeArea.centerYAnchor)
+            self.startEmptyResultLabel.trailingAnchor.constraint(equalTo: self.emptyResultView.trailingAnchor)
             ])
     }
 }

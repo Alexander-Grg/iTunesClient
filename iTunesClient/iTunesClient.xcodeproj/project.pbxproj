@@ -164,7 +164,6 @@
 		627C315D2859E76500C9D2A8 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				71ADE4F72A684C77006B1C95 /* New Group */,
 				62DF1EEE27A6E1E6004F09D1 /* AppDelegate.swift */,
 				627C31602859E7C300C9D2A8 /* Assembly */,
 				627C315F2859E7A200C9D2A8 /* BusinessLogic */,
@@ -384,13 +383,6 @@
 				71ADE4F52A684A55006B1C95 /* UiImageExt.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		71ADE4F72A684C77006B1C95 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		71ADE4F82A684C85006B1C95 /* ReusableViews */ = {
