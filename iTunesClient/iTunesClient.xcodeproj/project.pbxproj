@@ -46,9 +46,10 @@
 		62DF1F2A27A6E7D8004F09D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */; };
 		62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */; };
 		62DF1F3427A6E879004F09D1 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */; };
-		7168AFCE2A794A81000F547C /* ScreenshotSwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7168AFCD2A794A81000F547C /* ScreenshotSwitchController.swift */; };
-		71ADE4F62A684A55006B1C95 /* UiImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADE4F52A684A55006B1C95 /* UiImageExt.swift */; };
 		71ADE4FA2A684C9A006B1C95 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */; };
+		71E7FBE42AB30F9900898F13 /* ScreenshotsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7FBE32AB30F9900898F13 /* ScreenshotsControl.swift */; };
+		71E7FBE62AB30FC100898F13 /* ScreenshotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7FBE52AB30FC100898F13 /* ScreenshotsViewController.swift */; };
+		71F48CA12AB8A1FB005CF972 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 71F48CA02AB8A1FB005CF972 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,9 +93,9 @@
 		62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellModel.swift; sourceTree = "<group>"; };
 		62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
-		7168AFCD2A794A81000F547C /* ScreenshotSwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotSwitchController.swift; sourceTree = "<group>"; };
-		71ADE4F52A684A55006B1C95 /* UiImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiImageExt.swift; sourceTree = "<group>"; };
 		71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		71E7FBE32AB30F9900898F13 /* ScreenshotsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsControl.swift; sourceTree = "<group>"; };
+		71E7FBE52AB30FC100898F13 /* ScreenshotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F48CA12AB8A1FB005CF972 /* SDWebImage in Frameworks */,
 				621B7CAF2844BDD100C114A1 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +213,6 @@
 		62A1DDFE28E5A70D00DDB223 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				62DF1F3227A6E85A004F09D1 /* Controller */,
 				62A1DDFF28E5A73E00DDB223 /* AppDetailPresenter.swift */,
 			);
 			path = Presenter;
@@ -247,7 +248,6 @@
 		62DF1F0227A6E22F004F09D1 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				71ADE4F42A684A40006B1C95 /* Extensions */,
 				62DF1F0C27A6E435004F09D1 /* Color */,
 			);
 			path = Core;
@@ -346,6 +346,7 @@
 		62DF1F2D27A6E808004F09D1 /* AppDetail */ = {
 			isa = PBXGroup;
 			children = (
+				62DF1F3227A6E85A004F09D1 /* Controller */,
 				62A1DDFE28E5A70D00DDB223 /* Presenter */,
 				62DF1F2E27A6E811004F09D1 /* View */,
 			);
@@ -369,17 +370,10 @@
 				620A23EF27A94FF0009FD43F /* DescriptionViewController.swift */,
 				62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */,
 				620A23ED27A94FBB009FD43F /* AppDetailHeaderViewController.swift */,
-				7168AFCD2A794A81000F547C /* ScreenshotSwitchController.swift */,
+				71E7FBE32AB30F9900898F13 /* ScreenshotsControl.swift */,
+				71E7FBE52AB30FC100898F13 /* ScreenshotsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		71ADE4F42A684A40006B1C95 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				71ADE4F52A684A55006B1C95 /* UiImageExt.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		71ADE4F82A684C85006B1C95 /* ReusableViews */ = {
@@ -409,6 +403,7 @@
 			name = iTunesClient;
 			packageProductDependencies = (
 				621B7CAE2844BDD100C114A1 /* Alamofire */,
+				71F48CA02AB8A1FB005CF972 /* SDWebImage */,
 			);
 			productName = iTunesClient;
 			productReference = 62DF1EEB27A6E1E6004F09D1 /* iTunesClient.app */;
@@ -440,6 +435,7 @@
 			mainGroup = 62DF1EE227A6E1E6004F09D1;
 			packageReferences = (
 				621B7CAD2844BDD100C114A1 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				71F48C9F2AB8A1FB005CF972 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 62DF1EEC27A6E1E6004F09D1 /* Products */;
 			projectDirPath = "";
@@ -491,7 +487,7 @@
 				620A23F227A95026009FD43F /* AppDetailDescriptionView.swift in Sources */,
 				62B29A4828E5F1F400346BFF /* ActivityIndicator.swift in Sources */,
 				62609EB927A99F360048DA52 /* SongsDetailViewController.swift in Sources */,
-				7168AFCE2A794A81000F547C /* ScreenshotSwitchController.swift in Sources */,
+				71E7FBE42AB30F9900898F13 /* ScreenshotsControl.swift in Sources */,
 				62DF1F2827A6E5C4004F09D1 /* AppCell.swift in Sources */,
 				62DF1F0B27A6E33B004F09D1 /* WebRequest.swift in Sources */,
 				62A1DE0028E5A73E00DDB223 /* AppDetailPresenter.swift in Sources */,
@@ -507,7 +503,6 @@
 				627C31632859E8B200C9D2A8 /* SearchSongsModuleBuilder.swift in Sources */,
 				62609EBD27A99FB30048DA52 /* SongsDescriptionViewController.swift in Sources */,
 				62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */,
-				71ADE4F62A684A55006B1C95 /* UiImageExt.swift in Sources */,
 				62DF1F1327A6E484004F09D1 /* AppStartManager.swift in Sources */,
 				620A23F027A94FF0009FD43F /* DescriptionViewController.swift in Sources */,
 				62DF1F1627A6E4B9004F09D1 /* iTunesSearchService.swift in Sources */,
@@ -520,6 +515,7 @@
 				629445F428477FFA00AA3B9F /* ExtendedDescriptionView.swift in Sources */,
 				62DF1F2627A6E5B3004F09D1 /* SearchView.swift in Sources */,
 				71ADE4FA2A684C9A006B1C95 /* StarRatingView.swift in Sources */,
+				71E7FBE62AB30FC100898F13 /* ScreenshotsViewController.swift in Sources */,
 				620A240627A95221009FD43F /* SongsSearchViewController.swift in Sources */,
 				62DF1F0E27A6E441004F09D1 /* Extensions.swift in Sources */,
 				62DF1F1E27A6E550004F09D1 /* ITunesApp.swift in Sources */,
@@ -747,6 +743,14 @@
 				kind = branch;
 			};
 		};
+		71F48C9F2AB8A1FB005CF972 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -754,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 621B7CAD2844BDD100C114A1 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		71F48CA02AB8A1FB005CF972 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71F48C9F2AB8A1FB005CF972 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

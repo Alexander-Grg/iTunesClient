@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class AppCell: UITableViewCell {
     
@@ -39,6 +40,9 @@ final class AppCell: UITableViewCell {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
+        image.layer.cornerRadius = image.frame.size.height/2
+        image.clipsToBounds = true
+        
         return image
     }()
     
@@ -63,7 +67,7 @@ final class AppCell: UITableViewCell {
                   self.ratingLabel.text = String(ratingNumber.dropLast(3))
               }
         if let avatarURL = URL(string: cellModel.avatar ?? "") {
-                self.avatarImage.imageFrom(url: avatarURL)
+            self.avatarImage.sd_setImage(with: avatarURL)
             }
     }
     

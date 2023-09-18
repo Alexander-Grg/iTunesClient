@@ -13,7 +13,7 @@ final class AppDetailViewController: UIViewController {
     
     lazy var headerViewController = AppDetailHeaderViewController(app: self.app)
     lazy var descriptionViewController = DescriptionViewController(app: self.app)
-    lazy var screenshotsVC = ExtendedPhotoViewController(app: self.app)
+    lazy var screenshotsVC = ScreenshotsViewController(app: self.app)
     
     init(app: ITunesApp) {
         self.app = app
@@ -63,8 +63,7 @@ final class AppDetailViewController: UIViewController {
             self.descriptionViewController.view.leftAnchor.constraint(
                 equalTo: self.view.leftAnchor),
             self.descriptionViewController.view.rightAnchor.constraint(
-                equalTo: self.view.rightAnchor),
-            self.descriptionViewController.view.heightAnchor.constraint(equalToConstant: 250)
+                equalTo: self.view.rightAnchor)
         ])
     }
     
@@ -80,7 +79,7 @@ final class AppDetailViewController: UIViewController {
                 constant: 10),
             self.screenshotsVC.view.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.screenshotsVC.view.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-            self.screenshotsVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -5)
+            self.screenshotsVC.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
 }

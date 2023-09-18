@@ -92,16 +92,17 @@ final class AppDetailDescriptionView: UIView {
         self.addSubview(self.extendButton)
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
-                                                 constant: 20.0),
-            self.titleLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor,
-                                                   constant: 270.0),
+                                                 constant: 5.0),
             self.titleLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
                                                   constant: 16.0),
+            self.titleLabel.bottomAnchor.constraint(equalTo: self.versionLabel.topAnchor, constant: -5),
+            self.titleLabel.centerYAnchor.constraint(equalTo: self.versionHistoryButton.centerYAnchor),
             
             self.versionHistoryButton.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor,
-                                                           constant: 20.0),
+                                                           constant: 5.0),
             self.versionHistoryButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor,
                                                              constant: -15.0),
+            self.versionHistoryButton.bottomAnchor.constraint(equalTo: self.lastUpdateLabel.topAnchor, constant: -5),
             
             self.descriptionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
                                                         constant: 10),
@@ -110,20 +111,15 @@ final class AppDetailDescriptionView: UIView {
             self.descriptionLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
                                                           constant: -10),
             
-            self.versionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor,
-                                                   constant: 10.0),
+            self.versionLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
             self.versionLabel.leftAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor,
                                                     constant: 16.0),
-            self.versionLabel.rightAnchor.constraint(equalTo: safeAreaLayoutGuide.rightAnchor,
-                                                     constant: 270.0),
-            self.versionLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor,
-                                                      constant: -10),
+            self.versionLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor),
             
-            self.lastUpdateLabel.topAnchor.constraint(equalTo: self.versionHistoryButton.bottomAnchor,
-                                                      constant: 10.0),
-            self.lastUpdateLabel.leftAnchor.constraint(equalTo: self.versionHistoryButton.leftAnchor),
-            self.lastUpdateLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor,
-                                                         constant: -10),
+            self.lastUpdateLabel.topAnchor.constraint(equalTo: self.versionHistoryButton.bottomAnchor),
+            self.lastUpdateLabel.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor, constant: -5),
+            self.lastUpdateLabel.bottomAnchor.constraint(equalTo: self.descriptionLabel.topAnchor),
+            
             self.extendButton.topAnchor.constraint(equalTo: self.lastUpdateLabel.bottomAnchor,
                                                    constant: 100),
             self.extendButton.rightAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor),

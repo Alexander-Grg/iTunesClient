@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class SongsCell: UITableViewCell {
     
@@ -61,7 +62,7 @@ final class SongsCell: UITableViewCell {
         self.subtitleLabel.text = cellModel.collectionName
         self.ratingLabel.text = cellModel.collectionName
         if let avatarURL = URL(string: cellModel.artwork ?? "") {
-               self.avatarImage.imageFrom(url: avatarURL)
+               self.avatarImage.sd_setImage(with: avatarURL)
            }
     }
     
