@@ -1,6 +1,6 @@
 # iTunesClient
 
-UIkit MVP architecture, ALAMOFIRE for the network layer, the APP is built entirely programmatically.
+UIkit clean MVP architecture, ALAMOFIRE for the network layer, natively created property injector to handle DI. the APP is built entirely programmatically.
 
 API source https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html#//apple_ref/doc/uid/TP40017632-CH3-SW1
 
