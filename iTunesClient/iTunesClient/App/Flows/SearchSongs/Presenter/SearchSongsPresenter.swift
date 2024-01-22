@@ -27,8 +27,8 @@ protocol SearchSongsViewOutput: AnyObject {
 final class SearchSongsPresenter {
     
     weak var viewInput: (UIViewController & SearchSongsViewInput)?
-    
-    private let searchService = ITunesSearchService()
+
+    @Injected (\.iTunesSearchService) var searchService
     
     private func requestApps(with query: String) {
         self.searchService.getSongs(forQuery: query) { [weak self] result in

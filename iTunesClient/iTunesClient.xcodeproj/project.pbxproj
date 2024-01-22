@@ -46,6 +46,7 @@
 		62DF1F2A27A6E7D8004F09D1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */; };
 		62DF1F2C27A6E7ED004F09D1 /* AppCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */; };
 		62DF1F3427A6E879004F09D1 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */; };
+		71259ADE2B5E7AE7005B3C03 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71259ADD2B5E7AE7005B3C03 /* DependencyInjection.swift */; };
 		71ADE4FA2A684C9A006B1C95 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */; };
 		71E7FBE42AB30F9900898F13 /* ScreenshotsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7FBE32AB30F9900898F13 /* ScreenshotsControl.swift */; };
 		71E7FBE62AB30FC100898F13 /* ScreenshotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7FBE52AB30FC100898F13 /* ScreenshotsViewController.swift */; };
@@ -93,6 +94,7 @@
 		62DF1F2927A6E7D8004F09D1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		62DF1F2B27A6E7ED004F09D1 /* AppCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCellModel.swift; sourceTree = "<group>"; };
 		62DF1F3327A6E879004F09D1 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		71259ADD2B5E7AE7005B3C03 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		71ADE4F92A684C9A006B1C95 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		71E7FBE32AB30F9900898F13 /* ScreenshotsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsControl.swift; sourceTree = "<group>"; };
 		71E7FBE52AB30FC100898F13 /* ScreenshotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				627C315F2859E7A200C9D2A8 /* BusinessLogic */,
 				62DF1F0F27A6E454004F09D1 /* Entity */,
 				62DF1F2127A6E57F004F09D1 /* Flows */,
+				71259ADD2B5E7AE7005B3C03 /* DependencyInjection.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				62609EBF27A99FED0048DA52 /* SongsDetailView.swift in Sources */,
 				62DF1F1327A6E484004F09D1 /* AppStartManager.swift in Sources */,
 				620A23F027A94FF0009FD43F /* DescriptionViewController.swift in Sources */,
+				71259ADE2B5E7AE7005B3C03 /* DependencyInjection.swift in Sources */,
 				62DF1F1627A6E4B9004F09D1 /* iTunesSearchService.swift in Sources */,
 				62DF1F0927A6E324004F09D1 /* NetworkManager.swift in Sources */,
 				620A240A27A952AC009FD43F /* SearchSongsView.swift in Sources */,
