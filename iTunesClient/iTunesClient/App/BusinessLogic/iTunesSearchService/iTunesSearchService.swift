@@ -8,8 +8,19 @@
 import Foundation
 import Alamofire
 
-final class ITunesSearchService {
-    
+struct ITunesSearchServiceKey: InjectionKey {
+   static var currentValue: ITunesSearchServiceProtocol = ITunesSearchService()
+}
+
+protocol ITunesSearchServiceProtocol: AnyObject {
+     typealias CompletionApps = (AFResult<[ITunesApp]>) -> Void
+     typealias CompletionSongs = (AFResult<[ITunesSong]>) -> Void
+     func getApps(forQuery query: String, then completion: CompletionApps?)
+     func getSongs(forQuery query: String, completion: CompletionSongs?)
+}
+
+final class ITunesSearchService: ITunesSearchServiceProtocol {
+
     public typealias CompletionApps = (AFResult<[ITunesApp]>) -> Void
     public typealias CompletionSongs = (AFResult<[ITunesSong]>) -> Void
     

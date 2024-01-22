@@ -27,9 +27,9 @@ protocol SearchViewOutput: AnyObject {
 final class SearchPresenter {
     
     weak var viewInput: (UIViewController & SearchViewInput)?
-    
-    private let searchService = ITunesSearchService()
-    
+
+    @Injected (\.iTunesSearchService) var searchService
+
     private func requestApps(with query: String) {
         self.searchService.getApps(forQuery: query) { [weak self] result in
             guard let self = self else { return }
